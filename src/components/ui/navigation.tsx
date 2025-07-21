@@ -28,7 +28,15 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link
+              to="/about"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/about") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              About Us
+            </Link>
             <Link
               to="/process"
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -53,12 +61,20 @@ export function Navigation() {
             >
               Testimonials
             </Link>
+            <Link
+              to="/contact"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/contact") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Book A Demo
+          <div className="hidden lg:flex items-center space-x-4">
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/contact">Book A Demo</Link>
             </Button>
             <Button className="bg-gradient-primary hover:opacity-90" size="sm">
               Hire Top Talent
@@ -99,7 +115,7 @@ export function Navigation() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -108,8 +124,15 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
+              <Link
+                to="/about"
+                className="text-sm font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
               <Link
                 to="/process"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
@@ -131,9 +154,16 @@ export function Navigation() {
               >
                 Testimonials
               </Link>
+              <Link
+                to="/contact"
+                className="text-sm font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
               <div className="pt-2 space-y-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  Book A Demo
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <Link to="/contact">Book A Demo</Link>
                 </Button>
                 <Button className="bg-gradient-primary hover:opacity-90 w-full" size="sm">
                   Hire Top Talent
