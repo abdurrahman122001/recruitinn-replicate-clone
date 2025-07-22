@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import { CandidateCard } from "@/components/candidate-card";
 import { TrustedLogos } from "@/components/trusted-logos";
 import { ArrowRight, Sparkles, Target, Users, Zap } from "lucide-react";
-
+import CTA from "@/components/cta";
+import Footer from "@/components/footer";
+import Strengths from "@/components/strength";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
@@ -20,7 +22,7 @@ export default function Home() {
                 className="transform rotate-3 w-48 lg:w-56"
               />
             </div>
-            
+
             <div className="absolute top-12 sm:top-20 right-4 sm:right-10 animate-fade-in hidden sm:block" style={{ animationDelay: '0.4s' }}>
               <CandidateCard
                 name="Amina Farah"
@@ -37,9 +39,9 @@ export default function Home() {
                   Recruitment
                 </span>
               </h1>
-              
+
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-                Transform your hiring process with RecruitInn's AI-powered solutions. 
+                Transform your hiring process with RecruitInn's AI-powered solutions.
                 Discover, assess, and onboard top talent faster, smarter, and with unmatched efficiency.
               </p>
 
@@ -110,29 +112,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Strengths/>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-primary rounded-2xl lg:rounded-3xl p-8 sm:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Hiring?
-            </h2>
-            <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Join thousands of companies already using RecruitInn to find and hire the best talent faster than ever.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-primary" asChild>
-                <Link to="/contact">Book A Demo</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                Start Free Trial
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA />
+      <Footer/>
     </div>
   );
 }
