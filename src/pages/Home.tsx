@@ -112,8 +112,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Strengths/>
-
+?
       {/* CTA Section */}
       <CTA />
       <Footer/>
