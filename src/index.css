@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 210 100% 53%;
+    --primary: 259 94% 51%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 100% 25%;
+    --secondary: 259 20% 96%;
+    --secondary-foreground: 259 94% 25%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
@@ -43,10 +43,10 @@ All colors MUST be HSL.
     --ring: 210 100% 53%;
 
     /* RecruitInn specific tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 53%), hsl(220 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(210 20% 96%), hsl(220 14% 96%));
-    --shadow-card: 0 4px 6px -1px hsl(210 100% 53% / 0.1), 0 2px 4px -2px hsl(210 100% 53% / 0.1);
-    --shadow-elegant: 0 10px 30px -10px hsl(210 100% 53% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(259 94% 51%), hsl(269 94% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(259 20% 96%), hsl(269 20% 96%));
+    --shadow-card: 0 4px 6px -1px hsl(259 94% 51% / 0.1), 0 2px 4px -2px hsl(259 94% 51% / 0.1);
+    --shadow-elegant: 0 10px 30px -10px hsl(259 94% 51% / 0.3);
 
     --radius: 0.5rem;
 
