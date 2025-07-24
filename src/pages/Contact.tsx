@@ -3,9 +3,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Users, Calendar } from "lucide-react";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+  Users,
+  Calendar,
+} from "lucide-react";
+import CTA from "@/components/cta";
+import Footer from "@/components/footer";
 export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -15,11 +30,11 @@ export default function Contact() {
     phone: "",
     companySize: "",
     inquiryType: "",
-    message: ""
+    message: "",
   });
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,40 +47,56 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Our Office",
-      details: ["123 Innovation Drive", "San Francisco, CA 94105", "United States"],
-      action: "Get Directions"
+      details: [
+        "123 Innovation Drive",
+        "San Francisco, CA 94105",
+        "United States",
+      ],
+      action: "Get Directions",
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "Monday - Friday", "9:00 AM - 6:00 PM PST"],
-      action: "Call Now"
+      details: [
+        "+1 (555) 123-4567",
+        "Monday - Friday",
+        "9:00 AM - 6:00 PM PST",
+      ],
+      action: "Call Now",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@recruitinn.ai", "support@recruitinn.ai", "sales@recruitinn.ai"],
-      action: "Send Email"
-    }
+      details: [
+        "hello@recruitinn.ai",
+        "support@recruitinn.ai",
+        "sales@recruitinn.ai",
+      ],
+      action: "Send Email",
+    },
   ];
 
   const faqs = [
     {
       question: "How quickly can I get started with RecruitInn?",
-      answer: "You can start using RecruitInn immediately after signing up. Our onboarding process takes less than 30 minutes, and you'll be posting your first job within the day."
+      answer:
+        "You can start using RecruitInn immediately after signing up. Our onboarding process takes less than 30 minutes, and you'll be posting your first job within the day.",
     },
     {
       question: "What kind of support do you provide?",
-      answer: "We offer 24/7 email support, live chat during business hours, and dedicated account management for Enterprise clients. We also provide comprehensive training and resources."
+      answer:
+        "We offer 24/7 email support, live chat during business hours, and dedicated account management for Enterprise clients. We also provide comprehensive training and resources.",
     },
     {
       question: "Can I integrate RecruitInn with my existing systems?",
-      answer: "Yes! We offer integrations with popular HR systems, ATS platforms, and productivity tools. Our API also allows for custom integrations."
+      answer:
+        "Yes! We offer integrations with popular HR systems, ATS platforms, and productivity tools. Our API also allows for custom integrations.",
     },
     {
       question: "How accurate is your AI matching?",
-      answer: "Our AI achieves 95% accuracy in candidate-role matching. We continuously improve our algorithms based on successful placements and client feedback."
-    }
+      answer:
+        "Our AI achieves 95% accuracy in candidate-role matching. We continuously improve our algorithms based on successful placements and client feedback.",
+    },
   ];
 
   return (
@@ -81,8 +112,9 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto">
-              Ready to transform your hiring process? We'd love to hear from you. 
-              Get in touch with our team and let's discuss how RecruitInn can help you find the perfect candidates.
+              Ready to transform your hiring process? We'd love to hear from
+              you. Get in touch with our team and let's discuss how RecruitInn
+              can help you find the perfect candidates.
             </p>
           </div>
         </div>
@@ -100,18 +132,24 @@ export default function Contact() {
                     Send us a message
                   </h2>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    Fill out the form below and we'll get back to you within 24
+                    hours.
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 lg:space-y-6"
+                >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
                       <Input
                         id="firstName"
                         value={formData.firstName}
-                        onChange={(e) => handleInputChange("firstName", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("firstName", e.target.value)
+                        }
                         placeholder="John"
                         required
                       />
@@ -121,7 +159,9 @@ export default function Contact() {
                       <Input
                         id="lastName"
                         value={formData.lastName}
-                        onChange={(e) => handleInputChange("lastName", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("lastName", e.target.value)
+                        }
                         placeholder="Doe"
                         required
                       />
@@ -134,7 +174,9 @@ export default function Contact() {
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
                       placeholder="john@company.com"
                       required
                     />
@@ -146,7 +188,9 @@ export default function Contact() {
                       <Input
                         id="company"
                         value={formData.company}
-                        onChange={(e) => handleInputChange("company", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("company", e.target.value)
+                        }
                         placeholder="Your Company Name"
                         required
                       />
@@ -157,7 +201,9 @@ export default function Contact() {
                         id="phone"
                         type="tel"
                         value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("phone", e.target.value)
+                        }
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -166,30 +212,48 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="companySize">Company Size</Label>
-                      <Select onValueChange={(value) => handleInputChange("companySize", value)}>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("companySize", value)
+                        }
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select size" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="1-10">1-10 employees</SelectItem>
                           <SelectItem value="11-50">11-50 employees</SelectItem>
-                          <SelectItem value="51-200">51-200 employees</SelectItem>
-                          <SelectItem value="201-500">201-500 employees</SelectItem>
+                          <SelectItem value="51-200">
+                            51-200 employees
+                          </SelectItem>
+                          <SelectItem value="201-500">
+                            201-500 employees
+                          </SelectItem>
                           <SelectItem value="500+">500+ employees</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="inquiryType">Inquiry Type</Label>
-                      <Select onValueChange={(value) => handleInputChange("inquiryType", value)}>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("inquiryType", value)
+                        }
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select type" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="demo">Request Demo</SelectItem>
-                          <SelectItem value="pricing">Pricing Information</SelectItem>
-                          <SelectItem value="support">Technical Support</SelectItem>
-                          <SelectItem value="partnership">Partnership</SelectItem>
+                          <SelectItem value="pricing">
+                            Pricing Information
+                          </SelectItem>
+                          <SelectItem value="support">
+                            Technical Support
+                          </SelectItem>
+                          <SelectItem value="partnership">
+                            Partnership
+                          </SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
@@ -201,14 +265,19 @@ export default function Contact() {
                     <Textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("message", e.target.value)
+                      }
                       placeholder="Tell us about your hiring needs and how we can help..."
                       rows={5}
                       required
                     />
                   </div>
 
-                  <Button className="w-full bg-gradient-primary hover:opacity-90" size="lg">
+                  <Button
+                    className="w-full bg-gradient-primary hover:opacity-90"
+                    size="lg"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -233,7 +302,10 @@ export default function Contact() {
                           </h3>
                           <div className="space-y-1 mb-3">
                             {info.details.map((detail, detailIndex) => (
-                              <p key={detailIndex} className="text-sm text-muted-foreground">
+                              <p
+                                key={detailIndex}
+                                className="text-sm text-muted-foreground"
+                              >
                                 {detail}
                               </p>
                             ))}
@@ -256,28 +328,36 @@ export default function Contact() {
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-2 mb-2">
                         <Clock className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">24h</span>
+                        <span className="text-lg lg:text-xl font-bold">
+                          24h
+                        </span>
                       </div>
                       <p className="text-sm text-white/80">Response Time</p>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-2 mb-2">
                         <Users className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">500+</span>
+                        <span className="text-lg lg:text-xl font-bold">
+                          500+
+                        </span>
                       </div>
                       <p className="text-sm text-white/80">Happy Clients</p>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-2 mb-2">
                         <MessageCircle className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">24/7</span>
+                        <span className="text-lg lg:text-xl font-bold">
+                          24/7
+                        </span>
                       </div>
                       <p className="text-sm text-white/80">Support</p>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-2 mb-2">
                         <Calendar className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">Free</span>
+                        <span className="text-lg lg:text-xl font-bold">
+                          Free
+                        </span>
                       </div>
                       <p className="text-sm text-white/80">Demo</p>
                     </div>
@@ -304,7 +384,10 @@ export default function Contact() {
 
             <div className="space-y-4 lg:space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-card p-6 lg:p-8 rounded-2xl shadow-card">
+                <div
+                  key={index}
+                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card"
+                >
                   <h3 className="text-lg font-bold text-card-foreground mb-3">
                     {faq.question}
                   </h3>
@@ -319,26 +402,8 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-primary rounded-2xl lg:rounded-3xl p-8 lg:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-base lg:text-lg text-white/90 mb-6 lg:mb-8 max-w-2xl mx-auto">
-              Our team is here to help. Schedule a personalized demo and see how RecruitInn can transform your hiring process.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-primary">
-                Schedule Demo
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                Start Free Trial
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA />
+      <Footer />
     </div>
   );
 }

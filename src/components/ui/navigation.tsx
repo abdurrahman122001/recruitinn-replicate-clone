@@ -53,14 +53,14 @@ export function Navigation() {
             >
               Process
             </Link>
-            <Link
+            {/* <Link
               to="/pricing"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isActive("/pricing") ? "text-primary" : "text-muted-foreground"
               }`}
             >
               Pricing
-            </Link>
+            </Link> */}
             <Link
               to="/testimonials"
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -82,12 +82,9 @@ export function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="outline" size="sm" asChild>
-              <Link to="/contact">Book A Demo</Link>
+              <Link to="/application-form">Apply As Candidate</Link>
             </Button>
-            <Button className="bg-gradient-primary hover:opacity-90" size="sm">
-              Hire Top Talent
-            </Button>
-            
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="space-x-1">

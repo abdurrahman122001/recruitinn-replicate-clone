@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Users, Search, Briefcase, Users as UsersIcon } from "lucide-react";
-
+import CTA from "@/components/cta";
+import Footer from "@/components/footer";
 export default function Services() {
   const services = [
     {
@@ -104,26 +105,8 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl lg:rounded-3xl p-8 lg:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Ready to Optimize Your Hiring?
-            </h2>
-            <p className="text-base lg:text-lg text-white/90 mb-6 lg:mb-8 max-w-2xl mx-auto">
-              Let Zillions Connect transform your recruitment process today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-primary">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+        <CTA/>
+        <Footer/>
     </div>
   );
 }

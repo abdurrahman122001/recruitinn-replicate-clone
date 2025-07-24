@@ -15,11 +15,8 @@ export default function CTA() {
           Join thousands of companies already using RecruitInn to find and hire the best talent faster than ever.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" variant="secondary" className="text-primary" asChild>
-            <Link to="/contact">Book A Demo</Link>
-          </Button>
-          <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-            Start Free Trial
+          <Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">
+            Apply As Candidate
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
         </div>
