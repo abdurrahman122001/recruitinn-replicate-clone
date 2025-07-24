@@ -18,7 +18,7 @@ export default function CTA() {
           <Button size="lg" variant="secondary" className="text-primary" asChild>
             <Link to="/contact">Book A Demo</Link>
           </Button>
-          <Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">
+          <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
             Start Free Trial
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
