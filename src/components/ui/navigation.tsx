@@ -38,6 +38,14 @@ export function Navigation() {
               About Us
             </Link>
             <Link
+              to="/services"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/services") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Services
+            </Link>
+            <Link
               to="/process"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isActive("/process") ? "text-primary" : "text-muted-foreground"
@@ -132,6 +140,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
+              </Link>
+              <Link
+                to="/services"
+                className="text-sm font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
               </Link>
               <Link
                 to="/process"
