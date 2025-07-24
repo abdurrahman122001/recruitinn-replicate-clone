@@ -11,10 +11,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[90vh] flex items-center">
+        {/* Mobile Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 sm:hidden"></div>
+        
+        {/* Mobile Floating Elements */}
+        <div className="absolute top-10 left-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 rounded-full blur-xl animate-pulse sm:hidden"></div>
+        <div className="absolute top-32 right-8 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-30 rounded-full blur-lg animate-pulse sm:hidden" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-15 rounded-full blur-2xl animate-pulse sm:hidden" style={{ animationDelay: '2s' }}></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Floating candidate cards */}
+            {/* Desktop Floating candidate cards */}
             <div className="absolute top-6 sm:top-10 left-4 sm:left-10 animate-fade-in hidden sm:block" style={{ animationDelay: '0.2s' }}>
               <CandidateCard
                 name="Ethan Parker"
@@ -33,31 +41,56 @@ export default function Home() {
               />
             </div>
 
+            {/* Mobile Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 mb-6 animate-fade-in sm:hidden">
+              <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
+              <span className="text-sm font-medium text-blue-700">AI-Powered Recruitment</span>
+            </div>
+
             <div className="relative z-10 px-4 sm:px-0">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 animate-slide-up leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 animate-slide-up leading-tight">
                 Revolutionizing{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                   Recruitment
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto animate-slide-up leading-relaxed px-2" style={{ animationDelay: '0.2s' }}>
                 Enhance your hiring with RecruitInn's AI-driven solutions for faster, smarter talent acquisition.
               </p>
 
-              <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 rounded-lg">
+              <div className="animate-slide-up space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center" style={{ animationDelay: '0.4s' }}>
+                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-base px-8 py-4 rounded-xl shadow-lg w-full sm:w-auto">
                   Start Now
-                  <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
+                <Button variant="outline" className="text-base px-8 py-4 rounded-xl border-2 w-full sm:w-auto">
+                  Watch Demo
+                </Button>
+              </div>
+
+              {/* Mobile Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-12 sm:hidden">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">500+</div>
+                  <div className="text-xs text-muted-foreground">Companies</div>
+                </div>
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-indigo-600">10K+</div>
+                  <div className="text-xs text-muted-foreground">Candidates</div>
+                </div>
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-purple-600">98%</div>
+                  <div className="text-xs text-muted-foreground">Success Rate</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Background decorations */}
-        <div className="absolute top-8 sm:top-16 left-1/4 w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-8 sm:bottom-16 right-1/4 w-28 h-28 sm:w-40 sm:h-40 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl"></div>
+        {/* Desktop Background decorations */}
+        <div className="absolute top-8 sm:top-16 left-1/4 w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block"></div>
+        <div className="absolute bottom-8 sm:bottom-16 right-1/4 w-28 h-28 sm:w-40 sm:h-40 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block"></div>
       </section>
 
       {/* Trusted Companies */}
