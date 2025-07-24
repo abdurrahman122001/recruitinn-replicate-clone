@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Footer from "@/components/footer";
 
 export default function Testimonials() {
   const testimonials = [
@@ -226,6 +227,7 @@ export default function Testimonials() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }
