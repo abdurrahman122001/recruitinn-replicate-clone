@@ -41,6 +41,38 @@ export default function Services() {
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
+            {/* Services Menu Navigation */}
+            <div className="flex justify-center mb-12 lg:mb-16">
+              <div className="bg-card rounded-2xl p-2 shadow-card">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button 
+                    variant="default" 
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
+                  >
+                    Executive Search
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
+                  >
+                    Mid-Level Hiring
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
+                  >
+                    RPO Services
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
+                  >
+                    Consulting
+                  </Button>
+                </div>
+              </div>
+            </div>
+
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Our Services
@@ -56,7 +88,7 @@ export default function Services() {
                   key={index}
                   className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group"
                 >
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                     <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
@@ -74,7 +106,7 @@ export default function Services() {
 
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-primary rounded-2xl lg:rounded-3xl p-8 lg:p-12 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl lg:rounded-3xl p-8 lg:p-12 text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Optimize Your Hiring?
             </h2>
