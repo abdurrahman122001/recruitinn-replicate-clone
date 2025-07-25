@@ -26,13 +26,13 @@ export default function Services() {
       <section className="py-16 lg:py-24 bg-gradient-secondary">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6 animate-fade-in">
               Our{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Services
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in [animation-delay:200ms]">
               Zillions Connect offers innovative HR solutions to engage, develop, and retain talent through specialized services.
             </p>
           </div>
@@ -87,7 +87,8 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group"
+                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
+                  style={{animationDelay: `${index * 200}ms`}}
                 >
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                     <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />

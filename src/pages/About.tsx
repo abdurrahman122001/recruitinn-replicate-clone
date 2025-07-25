@@ -85,27 +85,27 @@ import { Button } from "@/components/ui/button";
 
     return (
       <div className="min-h-screen bg-background">
-        <section className="py-16 lg:py-24 bg-gradient-secondary">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6">
-                About{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Zillions Connect
-                </span>
-              </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed">
-                We are an innovative Human Resource Accelerator committed to helping clients engage, develop, and retain talent, empowering their human capital.
-              </p>
-            </div>
+      <section className="py-16 lg:py-24 bg-gradient-secondary">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6 animate-fade-in">
+              About{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Zillions Connect
+              </span>
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in [animation-delay:200ms]">
+              We are an innovative Human Resource Accelerator committed to helping clients engage, develop, and retain talent, empowering their human capital.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
         <section className="py-12 lg:py-16 border-b border-border">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="space-y-2">
+                <div key={index} className="space-y-2 animate-scale-in hover-scale" style={{animationDelay: `${index * 100}ms`}}>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
                     {stat.number}
                   </div>
@@ -151,7 +151,7 @@ import { Button } from "@/components/ui/button";
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {values.map((value, index) => (
-                  <div key={index} className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group">
+                  <div key={index} className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-fade-in hover-scale" style={{animationDelay: `${index * 150}ms`}}>
                     <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                       <value.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                     </div>
@@ -211,7 +211,7 @@ import { Button } from "@/components/ui/button";
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 {team.map((member, index) => (
-                  <div key={index} className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 text-center group">
+                  <div key={index} className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 text-center group animate-scale-in hover-scale" style={{animationDelay: `${index * 100}ms`}}>
                     <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
                       <span className="text-white font-bold text-lg lg:text-xl">
                         {member.name.split(' ').map(n => n[0]).join('')}

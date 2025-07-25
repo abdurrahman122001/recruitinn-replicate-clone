@@ -67,10 +67,10 @@ export default function Testimonials() {
       <section className="py-20 bg-gradient-secondary">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
               What Our Clients Say
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in [animation-delay:200ms]">
               Discover how companies worldwide are transforming their recruitment with RecruitInn's AI-powered solutions.
             </p>
           </div>
@@ -102,7 +102,8 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group"
+                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-fade-in hover-scale"
+                style={{animationDelay: `${index * 150}ms`}}
               >
                 {/* Rating Stars */}
                 <div className="flex space-x-1 mb-4">

@@ -13,10 +13,10 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gradient-secondary flex items-center justify-center p-6">
       <div className="w-full max-w-md">
-        <div className="bg-card rounded-3xl shadow-elegant p-8">
+        <div className="bg-card rounded-3xl shadow-elegant p-8 animate-scale-in">
           {/* Logo */}
-          <div className="text-center mb-8">
-            <Link to="/" className="inline-flex items-center space-x-2">
+          <div className="text-center mb-8 animate-fade-in">
+            <Link to="/" className="inline-flex items-center space-x-2 hover-scale">
               <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold">R</span>
               </div>

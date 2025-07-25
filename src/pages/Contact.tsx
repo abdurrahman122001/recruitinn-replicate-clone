@@ -105,13 +105,13 @@ export default function Contact() {
       <section className="py-16 lg:py-24 bg-gradient-secondary">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 lg:mb-6 animate-fade-in">
               Get in{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Touch
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto animate-fade-in [animation-delay:200ms]">
               Ready to transform your hiring process? We'd love to hear from
               you. Get in touch with our team and let's discuss how RecruitInn
               can help you find the perfect candidates.
@@ -126,7 +126,7 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
               {/* Contact Form */}
-              <div className="bg-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-card">
+              <div className="bg-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-card animate-slide-in-right">
                 <div className="mb-6 lg:mb-8">
                   <h2 className="text-2xl lg:text-3xl font-bold text-card-foreground mb-2">
                     Send us a message
@@ -290,7 +290,8 @@ export default function Contact() {
                   {contactInfo.map((info, index) => (
                     <div
                       key={index}
-                      className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group"
+                      className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-fade-in hover-scale"
+                      style={{animationDelay: `${index * 200}ms`}}
                     >
                       <div className="flex items-start space-x-4">
                         <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">

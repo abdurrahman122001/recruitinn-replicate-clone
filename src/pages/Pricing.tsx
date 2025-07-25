@@ -76,10 +76,10 @@ export default function Pricing() {
       <section className="py-20 bg-gradient-secondary">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in [animation-delay:200ms]">
               Choose the plan that fits your hiring needs. All plans include our core AI-powered recruitment features.
             </p>
           </div>
@@ -93,9 +93,10 @@ export default function Pricing() {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative bg-card rounded-3xl shadow-card hover:shadow-elegant transition-all duration-300 ${
+                className={`relative bg-card rounded-3xl shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in hover-scale ${
                   plan.popular ? 'ring-2 ring-primary scale-105' : ''
                 }`}
+                style={{animationDelay: `${index * 200}ms`}}
               >
                 {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary text-white">
@@ -168,7 +169,7 @@ export default function Pricing() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card p-6 rounded-2xl shadow-card">
+              <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-in hover-scale" style={{animationDelay: '100ms'}}>
                 <h3 className="font-bold text-card-foreground mb-2">
                   Can I change plans anytime?
                 </h3>
@@ -177,7 +178,7 @@ export default function Pricing() {
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-2xl shadow-card">
+              <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-in hover-scale" style={{animationDelay: '200ms'}}>
                 <h3 className="font-bold text-card-foreground mb-2">
                   Is there a free trial?
                 </h3>
@@ -186,7 +187,7 @@ export default function Pricing() {
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-2xl shadow-card">
+              <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-in hover-scale" style={{animationDelay: '300ms'}}>
                 <h3 className="font-bold text-card-foreground mb-2">
                   What payment methods do you accept?
                 </h3>
@@ -195,7 +196,7 @@ export default function Pricing() {
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-2xl shadow-card">
+              <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-in hover-scale" style={{animationDelay: '400ms'}}>
                 <h3 className="font-bold text-card-foreground mb-2">
                   Do you offer custom solutions?
                 </h3>

@@ -133,13 +133,13 @@ export default function ApplicationForm() {
       <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 animate-fade-in">
               Join Our{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Team
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 lg:mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 lg:mb-8 max-w-3xl mx-auto animate-fade-in [animation-delay:200ms]">
               We're always looking for talented individuals to join our growing team. 
               Submit your application and we'll get back to you soon.
             </p>
@@ -151,7 +151,7 @@ export default function ApplicationForm() {
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-100 animate-scale-in">
               {submitSuccess ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
