@@ -10,7 +10,7 @@ export default function Testimonials() {
       company: "TechCorp",
       avatar: "/placeholder-avatar-1.jpg",
       rating: 5,
-      content: "RecruitInn transformed our hiring process completely. We reduced our time-to-hire by 70% and found better candidates than ever before. The AI matching is incredibly accurate."
+      content: "Zillions transformed our hiring process completely. We reduced our time-to-hire by 70% and found better candidates than ever before. The AI matching is incredibly accurate."
     },
     {
       name: "Michael Chen",
@@ -18,7 +18,7 @@ export default function Testimonials() {
       company: "InnovateLabs",
       avatar: "/placeholder-avatar-2.jpg", 
       rating: 5,
-      content: "As a startup, we needed to hire fast without compromising quality. RecruitInn helped us build our entire engineering team in just 2 months. Absolutely game-changing."
+      content: "As a startup, we needed to hire fast without compromising quality. Zillions helped us build our entire engineering team in just 2 months. Absolutely game-changing."
     },
     {
       name: "Emily Rodriguez",
@@ -26,7 +26,7 @@ export default function Testimonials() {
       company: "Global Solutions Inc.",
       avatar: "/placeholder-avatar-3.jpg",
       rating: 5,
-      content: "The candidate quality we get through RecruitInn is outstanding. Their assessments are thorough and the cultural fit predictions have been spot-on. Highly recommend!"
+      content: "The candidate quality we get through Zillions is outstanding. Their assessments are thorough and the cultural fit predictions have been spot-on. Highly recommend!"
     },
     {
       name: "David Kumar",
@@ -34,7 +34,7 @@ export default function Testimonials() {
       company: "DataFlow Systems",
       avatar: "/placeholder-avatar-4.jpg",
       rating: 5,
-      content: "We've hired 15+ engineers through RecruitInn and every single one has been a great fit. The technical assessments really work and save us so much interview time."
+      content: "We've hired 15+ engineers through Zillions and every single one has been a great fit. The technical assessments really work and save us so much interview time."
     },
     {
       name: "Lisa Thompson",
@@ -42,7 +42,7 @@ export default function Testimonials() {
       company: "CreativeWorks",
       avatar: "/placeholder-avatar-5.jpg",
       rating: 5,
-      content: "The platform is intuitive and the support team is fantastic. RecruitInn doesn't just find candidates - they find the right candidates. Our retention rates have improved significantly."
+      content: "The platform is intuitive and the support team is fantastic. Zillions doesn't just find candidates - they find the right candidates. Our retention rates have improved significantly."
     },
     {
       name: "James Wilson",
@@ -50,7 +50,7 @@ export default function Testimonials() {
       company: "NextGen Solutions",
       avatar: "/placeholder-avatar-6.jpg",
       rating: 5,
-      content: "ROI was immediate. Within 3 months of using RecruitInn, we cut recruitment costs by 60% while improving hire quality. It's an essential tool for any growing company."
+      content: "ROI was immediate. Within 3 months of using Zillions, we cut recruitment costs by 60% while improving hire quality. It's an essential tool for any growing company."
     }
   ];
 
@@ -71,7 +71,7 @@ export default function Testimonials() {
               What Our Clients Say
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in [animation-delay:200ms]">
-              Discover how companies worldwide are transforming their recruitment with RecruitInn's AI-powered solutions.
+              Discover how companies worldwide are transforming their recruitment with Zillions' AI-powered solutions.
             </p>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function Testimonials() {
                   </h3>
                   <p className="text-muted-foreground mb-6">
                     TechCorp needed to rapidly expand their engineering team from 10 to 50 developers. 
-                    Using traditional methods, this would have taken 18+ months. With RecruitInn's AI-powered 
+                    Using traditional methods, this would have taken 18+ months. With Zillions' AI-powered 
                     platform, they achieved this in just 6 months while maintaining high quality standards.
                   </p>
                   
@@ -187,7 +187,7 @@ export default function Testimonials() {
 
                 <div className="bg-gradient-primary rounded-2xl p-8 text-white">
                   <blockquote className="text-lg italic mb-4">
-                    "RecruitInn didn't just help us hire faster - they helped us hire smarter. 
+                    "Zillions didn't just help us hire faster - they helped us hire smarter. 
                     The quality of candidates has been exceptional, and our new hires are 
                     contributing from day one."
                   </blockquote>

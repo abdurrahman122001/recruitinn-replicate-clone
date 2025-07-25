@@ -12,7 +12,7 @@ export default function CTA() {
           Ready to Transform Your Hiring?
         </h2>
         <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Join thousands of companies already using RecruitInn to find and hire the best talent faster than ever.
+          Join thousands of companies already using Zillions to find and hire the best talent faster than ever.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">

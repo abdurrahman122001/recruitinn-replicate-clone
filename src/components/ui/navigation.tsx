@@ -24,7 +24,7 @@ export function Navigation() {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">R</span>
             </div>
-            <span className="text-xl font-bold text-foreground">Recruitinn.ai</span>
+            <span className="text-xl font-bold text-foreground">Zillions</span>
           </Link>
 
           {/* Desktop Navigation */}

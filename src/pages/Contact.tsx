@@ -68,9 +68,9 @@ export default function Contact() {
       icon: Mail,
       title: "Email Us",
       details: [
-        "hello@recruitinn.ai",
-        "support@recruitinn.ai",
-        "sales@recruitinn.ai",
+        "hello@zillions.ai",
+        "support@zillions.ai",
+        "sales@zillions.ai",
       ],
       action: "Send Email",
     },
@@ -78,9 +78,9 @@ export default function Contact() {
 
   const faqs = [
     {
-      question: "How quickly can I get started with RecruitInn?",
+      question: "How quickly can I get started with Zillions?",
       answer:
-        "You can start using RecruitInn immediately after signing up. Our onboarding process takes less than 30 minutes, and you'll be posting your first job within the day.",
+        "You can start using Zillions immediately after signing up. Our onboarding process takes less than 30 minutes, and you'll be posting your first job within the day.",
     },
     {
       question: "What kind of support do you provide?",
@@ -88,7 +88,7 @@ export default function Contact() {
         "We offer 24/7 email support, live chat during business hours, and dedicated account management for Enterprise clients. We also provide comprehensive training and resources.",
     },
     {
-      question: "Can I integrate RecruitInn with my existing systems?",
+      question: "Can I integrate Zillions with my existing systems?",
       answer:
         "Yes! We offer integrations with popular HR systems, ATS platforms, and productivity tools. Our API also allows for custom integrations.",
     },
@@ -113,7 +113,7 @@ export default function Contact() {
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto animate-fade-in [animation-delay:200ms]">
               Ready to transform your hiring process? We'd love to hear from
-              you. Get in touch with our team and let's discuss how RecruitInn
+              you. Get in touch with our team and let's discuss how Zillions
               can help you find the perfect candidates.
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function Contact() {
                 {/* Quick Stats */}
                 <div className="bg-gradient-primary rounded-2xl p-6 lg:p-8 text-white">
                   <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-6">
-                    Why Choose RecruitInn?
+                    Why Choose Zillions?
                   </h3>
                   <div className="grid grid-cols-2 gap-4 lg:gap-6">
                     <div className="text-center">
@@ -379,7 +379,7 @@ export default function Contact() {
                 Frequently Asked Questions
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground">
-                Quick answers to common questions about RecruitInn
+                Quick answers to common questions about Zillions
               </p>
             </div>
 

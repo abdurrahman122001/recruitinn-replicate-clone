@@ -20,7 +20,7 @@ export default function Login() {
               <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold">R</span>
               </div>
-              <span className="text-xl font-bold text-foreground">Recruitinn.ai</span>
+              <span className="text-xl font-bold text-foreground">Zillions</span>
             </Link>
           </div>
 

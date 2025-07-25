@@ -84,7 +84,7 @@ export default function Home() {
                 className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 mx-auto animate-slide-up leading-relaxed"
                 style={{ animationDelay: "0.2s" }}
               >
-                Enhance your hiring with RecruitInn's AI-driven solutions for
+                Enhance your hiring with Zillions' AI-driven solutions for
                 faster, smarter talent acquisition.
               </p>
 
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-3 sm:mb-4">
-              Why Choose RecruitInn?
+              Why Choose Zillions?
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
               Our AI platform transforms recruitment with automation and
@@ -281,7 +281,7 @@ export default function Home() {
               Success Stories
             </h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
-              Real results from companies using RecruitInn.
+              Real results from companies using Zillions.
             </p>
           </div>
 
@@ -300,7 +300,7 @@ export default function Home() {
                   Tech Startup Reduced Hiring Time by 60%
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  "RecruitInn helped us scale our engineering team from 10 to 50
+                  "Zillions helped us scale our engineering team from 10 to 50
                   in just 3 months. Their AI matching saved us hundreds of hours
                   in screening."
                 </p>
@@ -322,7 +322,7 @@ export default function Home() {
                   Enterprise Company Improved Retention by 45%
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  "The cultural fit assessment from RecruitInn has dramatically
+                  "The cultural fit assessment from Zillions has dramatically
                   improved our employee retention and team cohesion."
                 </p>
                 <div className="flex items-center">
