@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu";
-
+import logo from "../../../public/Zillion-Connect--Final.png"
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -19,37 +19,30 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">R</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Zillions</span>
+            <img className="w-40 h-24" src={logo} alt="Logo" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <Link
               to="/about"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/about") ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/about") ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               About Us
             </Link>
             <Link
               to="/services"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/services") ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/services") ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               Services
             </Link>
             <Link
               to="/process"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/process") ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/process") ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               Process
             </Link>
@@ -63,17 +56,15 @@ export function Navigation() {
             </Link> */}
             <Link
               to="/testimonials"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/testimonials") ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/testimonials") ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               Testimonials
             </Link>
             <Link
               to="/contact"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/contact") ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contact") ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               Contact
             </Link>
@@ -85,7 +76,7 @@ export function Navigation() {
               <Link to="/application-form">Apply As Candidate</Link>
             </Button>
 
-            <DropdownMenu>
+            {/* <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="space-x-1">
                   <span>Login</span>
@@ -100,9 +91,9 @@ export function Navigation() {
                   <Link to="/candidate-login">Apply As Engineer</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
 
-            <DropdownMenu>
+            {/* <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="space-x-1">
                   <Globe className="w-4 h-4" />
@@ -113,7 +104,7 @@ export function Navigation() {
                 <DropdownMenuItem>English</DropdownMenuItem>
                 <DropdownMenuItem>Arabic</DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
           </div>
 
           {/* Mobile Menu Button */}

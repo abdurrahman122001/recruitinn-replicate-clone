@@ -21,9 +21,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center">
-        {/* Mobile Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 sm:hidden"></div>
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('http://plus.unsplash.com/premium_photo-1661428890812-37d23f0d272d?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+        {/* Mobile Background Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-indigo-900/50 to-purple-900/50 sm:hidden"></div>
 
         {/* Mobile Floating Elements */}
         <div className="absolute top-10 left-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 rounded-full blur-xl animate-pulse sm:hidden"></div>
@@ -37,51 +37,26 @@ export default function Home() {
         ></div>
 
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-          {/* Desktop Floating candidate cards - Positioned absolutely outside text container */}
-          <div
-            className="absolute top-1/4 left-4 -translate-y-1/4 animate-fade-in hidden lg:block"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <CandidateCard
-              name="Ethan Parker"
-              role="iOS Developer"
-              status="not-eligible"
-              className="transform rotate-3 w-48 xl:w-56"
-            />
-          </div>
-
-          <div
-            className="absolute top-1/3 right-4 -translate-y-1/3 animate-fade-in hidden lg:block"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <CandidateCard
-              name="Amina Farah"
-              role="Full-Stack Developer"
-              status="recommended"
-              className="transform -rotate-2 w-48 xl:w-56"
-            />
-          </div>
-
           {/* Narrower Text Container */}
           <div className="relative z-10 px-4 sm:px-0 max-w-2xl lg:max-w-2xl mx-auto">
             {/* Mobile Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 mb-6 animate-fade-in sm:hidden">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100/80 to-indigo-100/80 border border-blue-200 mb-6 animate-fade-in sm:hidden">
               <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
               <span className="text-sm font-medium text-blue-700">
-                AI-Powered Recruitment
+                Powered Recruitment
               </span>
             </div>
 
             <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 animate-slide-up leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 animate-slide-up leading-tight">
                 Revolutionizing{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   Recruitment
                 </span>
               </h1>
 
               <p
-                className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 mx-auto animate-slide-up leading-relaxed"
+                className="text-base sm:text-lg lg:text-xl text-white mb-8 sm:mb-10 mx-auto animate-slide-up leading-relaxed"
                 style={{ animationDelay: "0.2s" }}
               >
                 Zillions Connect is an innovative & dynamic Human Resource Accelerator committed to delivering solutions
@@ -91,31 +66,26 @@ export default function Home() {
                 className="animate-slide-up space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center"
                 style={{ animationDelay: "0.4s" }}
               >
-                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-base px-8 py-4 rounded-xl shadow-lg w-full sm:w-auto">
-                  Start Now
-                  <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="text-base px-8 py-4 rounded-xl border-2 border-gray-300 hover:bg-gray-50 w-full sm:w-auto"
-                >
-                  Watch Demo
-                </Button>
+                <Link to="/application-form"> <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-base px-8 py-4 rounded-xl shadow-lg w-full sm:w-auto">
+                  Apply As Candidate
+                  <ArrowRight className="mt-1 w-3 h-3 sm:w-4 sm:h-4" />
+                </Button></Link>
+    
               </div>
 
               {/* Mobile Stats */}
               <div className="grid grid-cols-3 gap-4 mt-12 sm:hidden">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600">500+</div>
-                  <div className="text-xs text-gray-500">Companies</div>
+                <div className="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-blue-300">500+</div>
+                  <div className="text-xs text-gray-200">Companies</div>
                 </div>
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
-                  <div className="text-2xl font-bold text-indigo-600">10K+</div>
-                  <div className="text-xs text-gray-500">Candidates</div>
+                <div className="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-indigo-300">10K+</div>
+                  <div className="text-xs text-gray-200">Candidates</div>
                 </div>
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
-                  <div className="text-2xl font-bold text-purple-600">98%</div>
-                  <div className="text-xs text-gray-500">Success Rate</div>
+                <div className="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl shadow-sm">
+                  <div className="text-2xl font-bold text-purple-300">98%</div>
+                  <div className="text-xs text-gray-200">Success Rate</div>
                 </div>
               </div>
             </div>
@@ -127,13 +97,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Companies */}
-      {/* <section className="py-6 sm:py-10 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-          <TrustedLogos />
-        </div>
-      </section> */}
-
       {/* Features Section */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -142,7 +105,7 @@ export default function Home() {
               Why Choose Zillions?
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-              Our AI platform transforms recruitment with automation and
+              Our platform transforms recruitment with automation and
               insights.
             </p>
           </div>
@@ -153,10 +116,10 @@ export default function Home() {
                 <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
               </div>
               <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-2 lg:mb-3">
-                AI-Powered Matching
+                Powered Matching
               </h3>
               <p className="text-xs lg:text-sm text-gray-600">
-                AI analyzes profiles to match candidates with your needs.
+                Analyzes profiles to match candidates with your needs.
               </p>
             </div>
 
@@ -239,7 +202,7 @@ export default function Home() {
                     Strategic Matching
                   </h3>
                   <p className="text-sm text-gray-600 mt-1">
-                    AI-powered matching aligns candidate strengths with your
+                    Powered matching aligns candidate strengths with your
                     specific role requirements.
                   </p>
                 </div>
@@ -300,7 +263,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
                   "Zillions helped us scale our engineering team from 10 to 50
-                  in just 3 months. Their AI matching saved us hundreds of hours
+                  in just 3 months. Their matching saved us hundreds of hours
                   in screening."
                 </p>
                 <div className="flex items-center">
@@ -382,7 +345,7 @@ export default function Home() {
                     Continuous Learning
                   </h3>
                   <p className="text-sm text-gray-600 mt-1">
-                    Our AI models continuously improve based on feedback and
+                    Our models continuously improve based on feedback and
                     outcomes, ensuring better matches over time.
                   </p>
                 </div>
