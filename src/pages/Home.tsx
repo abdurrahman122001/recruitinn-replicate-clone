@@ -84,8 +84,7 @@ export default function Home() {
                 className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 mx-auto animate-slide-up leading-relaxed"
                 style={{ animationDelay: "0.2s" }}
               >
-                Enhance your hiring with Zillions' AI-driven solutions for
-                faster, smarter talent acquisition.
+                Zillions Connect is an innovative & dynamic Human Resource Accelerator committed to delivering solutions
               </p>
 
               <div
