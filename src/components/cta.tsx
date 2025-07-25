@@ -15,10 +15,10 @@ export default function CTA() {
           Join thousands of companies already using Zillions to find and hire the best talent faster than ever.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">
+          <Link to="/application-form"><Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">
             Apply As Candidate
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </div>

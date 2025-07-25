@@ -1,25 +1,44 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Users, Search, Briefcase, Users as UsersIcon } from "lucide-react";
+import { Search, Briefcase, Users as UsersIcon, Lightbulb } from "lucide-react";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
+
 export default function Services() {
+  const [activeTab, setActiveTab] = useState("All");
+
   const services = [
     {
+      category: "Executive Search",
       icon: Search,
       title: "Executive Search",
       description: "Specialized recruitment for top-tier executive positions, ensuring the best talent for leadership roles."
     },
     {
+      category: "Mid-Level Hiring",
       icon: Briefcase,
       title: "Senior and Mid Level Hiring",
       description: "Comprehensive hiring solutions for senior and mid-level professionals to meet diverse organizational needs."
     },
     {
+      category: "RPO Services",
       icon: UsersIcon,
       title: "Recruitment Process Outsourcing (RPO)",
       description: "End-to-end outsourcing of recruitment processes to streamline and enhance hiring efficiency."
+    },
+    {
+      category: "Consulting",
+      icon: Lightbulb,
+      title: "HR Consulting",
+      description: "Expert guidance to optimize HR strategies and improve organizational performance."
     }
   ];
+
+  const filteredServices = activeTab === "All" 
+    ? services 
+    : services.filter(service => service.category === activeTab);
+
+  const tabs = ["All", "Executive Search", "Mid-Level Hiring", "RPO Services", "Consulting"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,30 +65,20 @@ export default function Services() {
             <div className="flex justify-center mb-12 lg:mb-16">
               <div className="bg-card rounded-2xl p-2 shadow-card">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <Button 
-                    variant="default" 
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
-                  >
-                    Executive Search
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Mid-Level Hiring
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    RPO Services
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    className="text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Consulting
-                  </Button>
+                  {tabs.map((tab) => (
+                    <Button
+                      key={tab}
+                      variant={activeTab === tab ? "default" : "ghost"}
+                      className={
+                        activeTab === tab
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }
+                      onClick={() => setActiveTab(tab)}
+                    >
+                      {tab}
+                    </Button>
+                  ))}
                 </div>
               </div>
             </div>
@@ -84,11 +93,11 @@ export default function Services() {
             </div>
 
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-              {services.map((service, index) => (
+              {filteredServices.map((service, index) => (
                 <div
                   key={index}
                   className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
-                  style={{animationDelay: `${index * 200}ms`}}
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                     <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
@@ -106,8 +115,8 @@ export default function Services() {
         </div>
       </section>
 
-        <CTA/>
-        <Footer/>
+      <CTA />
+      <Footer />
     </div>
   );
 }

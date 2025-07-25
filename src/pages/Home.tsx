@@ -21,18 +21,21 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('http://plus.unsplash.com/premium_photo-1661428890812-37d23f0d272d?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('https://7904d81e-99fb-4d80-8a08-9ed84868691d.lovableproject.com/src/assets/hero-image.jpg')" }}>
+        {/* Black Overlay Layer - Added this */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
+
         {/* Mobile Background Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-indigo-900/50 to-purple-900/50 sm:hidden"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-indigo-900/50 to-purple-900/50 sm:hidden z-0"></div>
 
         {/* Mobile Floating Elements */}
-        <div className="absolute top-10 left-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 rounded-full blur-xl animate-pulse sm:hidden"></div>
+        <div className="absolute top-10 left-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 rounded-full blur-xl animate-pulse sm:hidden z-0"></div>
         <div
-          className="absolute top-32 right-8 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-30 rounded-full blur-lg animate-pulse sm:hidden"
+          className="absolute top-32 right-8 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-30 rounded-full blur-lg animate-pulse sm:hidden z-0"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-15 rounded-full blur-2xl animate-pulse sm:hidden"
+          className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-15 rounded-full blur-2xl animate-pulse sm:hidden z-0"
           style={{ animationDelay: "2s" }}
         ></div>
 
@@ -66,11 +69,12 @@ export default function Home() {
                 className="animate-slide-up space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center"
                 style={{ animationDelay: "0.4s" }}
               >
-                <Link to="/application-form"> <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-base px-8 py-4 rounded-xl shadow-lg w-full sm:w-auto">
-                  Apply As Candidate
-                  <ArrowRight className="mt-1 w-3 h-3 sm:w-4 sm:h-4" />
-                </Button></Link>
-    
+                <Link to="/application-form">
+                  <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-base px-8 py-4 rounded-xl shadow-lg w-full sm:w-auto">
+                    Apply As Candidate
+                    <ArrowRight className="mt-1 w-3 h-3 sm:w-4 sm:h-4" />
+                  </Button>
+                </Link>
               </div>
 
               {/* Mobile Stats */}
@@ -92,11 +96,10 @@ export default function Home() {
           </div>
 
           {/* Desktop Background decorations - Adjusted positions */}
-          <div className="absolute top-1/4 left-1/4 w-28 h-28 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block"></div>
+          <div className="absolute top-1/4 left-1/4 w-28 h-28 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block z-0"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-10 rounded-full blur-2xl hidden sm:block z-0"></div>
         </div>
       </section>
-
       {/* Features Section */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -311,7 +314,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Why It Works
+              How It Works
             </h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
               Technology and expertise for top recruitment results.
@@ -359,7 +362,7 @@ export default function Home() {
 
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f402?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://cdn.prod.website-files.com/65a68db60fa2f99d12439063/66eab6e99b34488e4223dfff_consultant-1927881398.jpeg"
                 alt="HR professional analyzing data"
                 className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
               />
