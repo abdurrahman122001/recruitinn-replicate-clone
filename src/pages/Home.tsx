@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('https://7904d81e-99fb-4d80-8a08-9ed84868691d.lovableproject.com/src/assets/hero-image.jpg')" }}>
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden min-h-[70vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('./hero-image.jpg')" }}>
         {/* Black Overlay Layer - Added this */}
         <div className="absolute inset-0 bg-black/40 z-0"></div>
 
