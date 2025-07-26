@@ -49,9 +49,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-foreground">Get in Touch</h3>
             <p className="text-sm text-muted-foreground">Email: info@zillionsconnect.com</p>
             <p className="text-sm text-muted-foreground">Phone: +1-800-123-4567</p>
-            <Button size="sm" variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white">
-              Request a Demo
-            </Button>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-muted-foreground">
