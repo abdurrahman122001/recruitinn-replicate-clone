@@ -6,27 +6,33 @@ export default function Process() {
   const steps = [
     {
       number: "01",
-      title: "Understanding Requirement",
-      description: "Detailed analysis of client needs to ensure perfect alignment with expectations.",
+      title: "Requirement Analysis",
+      description: "We begin by deeply understanding your business, role expectations, culture, and timelines. This ensures our search is sharply aligned with your needs.",
       icon: Upload,
     },
     {
       number: "02",
-      title: "Sourcing",
-      description: "Leveraging our extensive database to identify top-tier candidates.",
+      title: "Talent Mapping & Sourcing",
+      description: "Using our proprietary database, targeted outreach, and market intelligence, we identify active and passive candidates who best match the job and company profile.",
       icon: Brain,
     },
     {
       number: "03",
       title: "Screening & Evaluation",
-      description: "Rigorous assessment to shortlist candidates with the right skills.",
+      description: "Each candidate undergoes a rigorous screening process that includes behavioral interviews, technical assessments, and cultural fit evaluations.",
       icon: Filter,
     },
     {
       number: "04",
-      title: "Selection & Onboarding",
-      description: "Facilitating final interviews and seamless onboarding process.",
+      title: "Shortlisting & Coordination",
+      description: "We present a refined shortlist of high-potential candidates, manage scheduling, feedback loops, and ensure a smooth interview experience for both parties.",
       icon: UserCheck,
+    },
+    {
+      number: "05",
+      title: "Offer Management & Onboarding",
+      description: "From offer negotiation to resignation handling and onboarding follow-up, we ensure a seamless transition and strong start for your new hire.",
+      icon: Users,
     },
   ];
 
@@ -72,11 +78,11 @@ export default function Process() {
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 animate-slide-up">
-              Simple. Smart.
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Effective.</span>
+              Recruitment{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Process</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-              Our proven 4-step process connects you with top talent in record time, leveraging AI and human expertise
+              At Zillions Connect, our recruitment process is built on precision, speed, and strategic alignment. We combine deep industry knowledge with a structured approach to deliver the right talent—every time.
             </p>
 
             {/* CTA Buttons */}

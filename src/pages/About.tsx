@@ -35,32 +35,32 @@ export default function About() {
     {
       icon: Target,
       title: "Innovation First",
-      description: "Leveraging advanced solutions to enhance recruitment processes."
+      description: "We continuously evolve our strategies, tools, and processes to stay ahead in a dynamic talent landscape. By embracing new technologies, data-driven insights, and creative problem-solving, we deliver smarter, faster, and more effective recruitment solutions."
     },
     {
       icon: Heart,
       title: "Human-Centric",
-      description: "Prioritizing human capital as the core of our services."
+      description: "People are at the heart of everything we do. We believe in building genuine, long-lasting relationships—with our clients, candidates, and team members. We listen with empathy, act with integrity, and create experiences that prioritize trust, transparency, and mutual respect."
     },
     {
       icon: Award,
       title: "Excellence",
-      description: "Committed to delivering top-tier HR solutions."
+      description: "Excellence is our standard, not a goal. We are committed to delivering the highest quality in every engagement. We set the bar high, continually refine our approach, and hold ourselves accountable to consistently exceed expectations."
     },
     {
       icon: Globe,
       title: "Accessibility",
-      description: "Making talent solutions available to all organizations."
+      description: "We believe true partnerships are built on openness and approachability. We ensure clear communication, quick turnarounds, and a supportive experience at every step. Our inclusive and transparent culture makes collaboration effortless and effective."
     },
     {
       icon: Lightbulb,
       title: "Continuous Learning",
-      description: "Emphasizing ongoing training and development."
+      description: "We thrive in a culture of curiosity, growth, and ongoing improvement. Continuous learning fuels our ability to adapt, innovate, and lead in an ever-changing recruitment landscape. We invest in upskilling our team, staying updated with industry trends."
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "Partnering closely with clients for tailored solutions."
+      description: "We believe that the best results come from working together. Collaboration is more than teamwork—it's about aligning goals, sharing knowledge, and co-creating success with our clients, candidates, and colleagues."
     }
   ];
 
@@ -96,7 +96,7 @@ export default function About() {
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in [animation-delay:200ms]">
-              We are an innovative Human Resource Accelerator committed to helping clients engage, develop, and retain talent, empowering their human capital.
+              We are among the fastest-growing HR and talent acquisition firms, dedicated to building long-term, strategic partnerships with our clients.
             </p>
           </div>
         </div>
@@ -127,9 +127,17 @@ export default function About() {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">
                   Our Mission
                 </h2>
-                <p className="text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6 leading-relaxed">
-                  We aim to revolutionize HR by delivering solutions that enhance talent engagement and development.
-                </p>
+                <div className="space-y-4 text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6 leading-relaxed">
+                  <p>
+                    By delivering agile, scalable, and result-driven workforce solutions, we enable businesses to stay focused on their core operations while we take care of their evolving human capital needs.
+                  </p>
+                  <p>
+                    Backed by strong industry expertise and a robust delivery framework, Zillions Connect empowers organizations through customized recruitment and HR services. Our client-centric approach ensures cost-effective solutions without compromising on quality.
+                  </p>
+                  <p>
+                    What sets us apart is our unique hybrid model—merging the strategic depth of management consulting with the efficiency and responsiveness of traditional staffing. At Zillions Connect, we don't just fill roles—we build futures.
+                  </p>
+                </div>
                 <Button className="bg-gradient-primary hover:opacity-90" size="lg">
                   Join Us
                 </Button>
@@ -194,6 +202,30 @@ export default function About() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Our People
+              </h2>
+              <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
+                Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. At Zillions Connect, our team brings a rare blend of industry insight, business acumen, and recruitment expertise.
+              </p>
+            </div>
+            <div className="bg-card p-8 lg:p-12 rounded-2xl shadow-card">
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  With deep understanding of client cultures and role requirements, they don't just assess resumes—they identify real potential and future performance. Many of our consultants have firsthand experience in the industries they now serve, allowing them to connect the right talent with the right opportunity.
+                </p>
+                <p>
+                  Whether it's evaluating emerging leaders or reaching out to proven executives, our people collaborate seamlessly to ensure every hire adds strategic value to our clients' business.
+                </p>
+              </div>
             </div>
           </div>
         </div>

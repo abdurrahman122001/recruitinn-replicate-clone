@@ -68,9 +68,9 @@ export default function Contact() {
       icon: Mail,
       title: "Email Us",
       details: [
-        "hello@zillions.ai",
-        "support@zillions.ai",
-        "sales@zillions.ai",
+        "info@zillionsconnect.com",
+        "+91-9650914095",
+        "Available 24/7",
       ],
       action: "Send Email",
     },

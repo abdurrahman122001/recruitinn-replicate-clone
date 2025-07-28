@@ -46,6 +46,13 @@ export function Navigation() {
             >
               Process
             </Link>
+            <Link
+              to="/industry-excellence"
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/industry-excellence") ? "text-primary" : "text-muted-foreground"
+                }`}
+            >
+              Industry Excellence
+            </Link>
             {/* <Link
               to="/pricing"
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -142,6 +149,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Process
+              </Link>
+              <Link
+                to="/industry-excellence"
+                className="text-sm font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Industry Excellence
               </Link>
               <Link
                 to="/pricing"

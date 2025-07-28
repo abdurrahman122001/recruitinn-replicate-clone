@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Services from "./pages/Services";
 import ApplicationForm from "./pages/ApplicationForm";
+import IndustryExcellence from "./pages/IndustryExcellence";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services/>} />
           <Route path="/process" element={<Process />} />
+          <Route path="/industry-excellence" element={<IndustryExcellence />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />

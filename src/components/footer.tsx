@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Get in Touch</h3>
             <p className="text-sm text-muted-foreground">Email: info@zillionsconnect.com</p>
-            <p className="text-sm text-muted-foreground">Phone: +1-800-123-4567</p>
+            <p className="text-sm text-muted-foreground">Phone: +91-9650914095</p>
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-muted-foreground">

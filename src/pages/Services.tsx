@@ -12,25 +12,36 @@ export default function Services() {
       category: "Executive Search",
       icon: Search,
       title: "Executive Search",
-      description: "Specialized recruitment for top-tier executive positions, ensuring the best talent for leadership roles."
+      description: "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success. We understand that leaders shape strategy, culture, and performance—so finding the right fit goes far beyond matching qualifications.",
+      details: "With deep expertise across industries such as Renewable Energy, Oil & Gas, Power, EV, Manufacturing, FMCG, Pharma, Food Processing, Steel, Metal, Mining, Infrastructure and Real Estate, our search specialists bring unparalleled market intelligence and an extensive network of high-impact leaders."
     },
     {
-      category: "Mid-Level Hiring",
+      category: "International Hiring",
       icon: Briefcase,
-      title: "Senior and Mid Level Hiring",
-      description: "Comprehensive hiring solutions for senior and mid-level professionals to meet diverse organizational needs."
+      title: "International Hiring",
+      description: "In today's global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders.",
+      details: "Our global hiring capabilities span across regions including the Middle East, Africa, Southeast Asia, and Europe, with a strong focus on industries like Energy, Infrastructure, Engineering, Manufacturing, Oil & Gas, Renewable Energy, and EVs."
+    },
+    {
+      category: "Permanent Recruitment",
+      icon: UsersIcon,
+      title: "Permanent Recruitment",
+      description: "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals.",
+      details: "We bring deep domain expertise across industries such as Renewable Energy, Oil & Gas, Power, EV, Manufacturing, FMCG, Pharma, Food Processing, Steel, Metal, Mining, Infrastructure and Real Estate, enabling us to understand the unique talent demands of each sector."
+    },
+    {
+      category: "Staffing Solutions",
+      icon: Lightbulb,
+      title: "Staffing Solutions",
+      description: "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced—without compromising on talent quality.",
+      details: "We offer customized staffing services to meet short-term, project-based, and contract hiring needs across a wide range of industries."
     },
     {
       category: "RPO Services",
       icon: UsersIcon,
       title: "Recruitment Process Outsourcing (RPO)",
-      description: "End-to-end outsourcing of recruitment processes to streamline and enhance hiring efficiency."
-    },
-    {
-      category: "Consulting",
-      icon: Lightbulb,
-      title: "HR Consulting",
-      description: "Expert guidance to optimize HR strategies and improve organizational performance."
+      description: "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions.",
+      details: "Our RPO services are designed to act as a seamless extension of your internal HR team—managing part or all of your recruitment lifecycle with precision, agility, and accountability."
     }
   ];
 
@@ -38,7 +49,7 @@ export default function Services() {
     ? services 
     : services.filter(service => service.category === activeTab);
 
-  const tabs = ["All", "Executive Search", "Mid-Level Hiring", "RPO Services", "Consulting"];
+  const tabs = ["All", "Executive Search", "International Hiring", "Permanent Recruitment", "Staffing Solutions", "RPO Services"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -92,7 +103,7 @@ export default function Services() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               {filteredServices.map((service, index) => (
                 <div
                   key={index}
@@ -105,9 +116,14 @@ export default function Services() {
                   <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4">
                     {service.description}
                   </p>
+                  {service.details && (
+                    <p className="text-xs lg:text-sm text-muted-foreground/80 leading-relaxed">
+                      {service.details}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
