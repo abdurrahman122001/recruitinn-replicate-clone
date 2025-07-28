@@ -65,10 +65,10 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "2025", label: "Active Since" },
+    { number: "2021", label: "Active Since" },
     { number: "200+", label: "Clients Served" },
-    { number: "10,000+", label: "Talent Engaged" },
-    { number: "90%", label: "Client Satisfaction" }
+    { number: "500+", label: "Talent Engaged" },
+    { number: "10+", label: "Global Reach - Countries" }
   ];
 
   const industries = [
