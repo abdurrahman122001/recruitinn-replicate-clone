@@ -45,26 +45,6 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Visit Our Office",
-      details: [
-        "123 Innovation Drive",
-        "San Francisco, CA 94105",
-        "United States",
-      ],
-      action: "Get Directions",
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: [
-        "+1 (555) 123-4567",
-        "Monday - Friday",
-        "9:00 AM - 6:00 PM PST",
-      ],
-      action: "Call Now",
-    },
-    {
       icon: Mail,
       title: "Email Us",
       details: [
@@ -284,7 +264,7 @@ export default function Contact() {
               </div>
 
               {/* Contact Information */}
-              <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-6 lg:space-y-8 flex flex-col justify-center animate-slide-in-left">
                 {/* Contact Cards */}
                 <div className="space-y-4 lg:space-y-6">
                   {contactInfo.map((info, index) => (
