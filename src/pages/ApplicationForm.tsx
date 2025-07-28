@@ -255,25 +255,17 @@ export default function ApplicationForm() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="position">Position Applying For *</Label>
-                        <Select
-                          onValueChange={(value) => handleInputChange("position", value)}
+                        <Label htmlFor="position" className="flex items-center gap-2">
+                          <Briefcase className="w-4 h-4" />
+                          Position Applying For *
+                        </Label>
+                        <Input
+                          id="position"
                           value={formData.position}
+                          onChange={(e) => handleInputChange("position", e.target.value)}
+                          placeholder="e.g. Frontend Developer"
                           required
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select position" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="frontend">Frontend Developer</SelectItem>
-                            <SelectItem value="backend">Backend Developer</SelectItem>
-                            <SelectItem value="fullstack">Full Stack Developer</SelectItem>
-                            <SelectItem value="uiux">UI/UX Designer</SelectItem>
-                            <SelectItem value="product">Product Manager</SelectItem>
-                            <SelectItem value="marketing">Marketing Specialist</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        />
                       </div>
                     </div>
 
