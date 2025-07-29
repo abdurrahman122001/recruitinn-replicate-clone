@@ -25,7 +25,6 @@ import {
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
-import heroImage from "/hero-image.jpg";
 import {
   ArrowRight,
   Sparkles,
@@ -39,6 +38,7 @@ import {
 } from "lucide-react";
 import bg1 from "/bg-2.png";
 import bg2 from "/bg-1.png";
+import mainBg from "/main-bg.jpg";
 const Index = () => {
   const stats = [
     { number: "2021", label: "Active Since" },
@@ -254,7 +254,7 @@ const Index = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImage})`,
+            backgroundImage: `url(${mainBg})`,
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -444,7 +444,7 @@ const Index = () => {
                 alt="HR professional analyzing data"
                 className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20"></div> */}
             </div>
           </div>
         </div>
