@@ -4,17 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/ui/navigation";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Process from "./pages/Process";
-import Pricing from "./pages/Pricing";
-import Testimonials from "./pages/Testimonials";
+import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
-import Services from "./pages/Services";
 import ApplicationForm from "./pages/ApplicationForm";
-import IndustryExcellence from "./pages/IndustryExcellence";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,13 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services/>} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/industry-excellence" element={<IndustryExcellence />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/client-login" element={<Login />} />
           <Route path="/candidate-login" element={<Login />} />

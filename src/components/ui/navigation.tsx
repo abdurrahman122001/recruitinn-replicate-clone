@@ -25,49 +25,56 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link
-              to="/about"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/about") ? "text-primary" : "text-muted-foreground"
-                }`}
+            <a
+              href="#about"
+              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               About Us
-            </Link>
-            <Link
-              to="/services"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/services") ? "text-primary" : "text-muted-foreground"
-                }`}
+            </a>
+            <a
+              href="#services"
+              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Services
-            </Link>
-            <Link
-              to="/process"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/process") ? "text-primary" : "text-muted-foreground"
-                }`}
+            </a>
+            <a
+              href="#process"
+              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Process
-            </Link>
-            <Link
-              to="/industry-excellence"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/industry-excellence") ? "text-primary" : "text-muted-foreground"
-                }`}
+            </a>
+            <a
+              href="#industry-excellence"
+              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Industry Excellence
-            </Link>
-            {/* <Link
-              to="/pricing"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/pricing") ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              Pricing
-            </Link> */}
-            <Link
-              to="/testimonials"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/testimonials") ? "text-primary" : "text-muted-foreground"
-                }`}
+            </a>
+            <a
+              href="#testimonials"
+              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Testimonials
-            </Link>
+            </a>
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contact") ? "text-primary" : "text-muted-foreground"
@@ -129,48 +136,61 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
-              <Link
-                to="/about"
+              <a
+                href="#about"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 About Us
-              </Link>
-              <Link
-                to="/services"
+              </a>
+              <a
+                href="#services"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Services
-              </Link>
-              <Link
-                to="/process"
+              </a>
+              <a
+                href="#process"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Process
-              </Link>
-              <Link
-                to="/industry-excellence"
+              </a>
+              <a
+                href="#industry-excellence"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Industry Excellence
-              </Link>
-              <Link
-                to="/pricing"
+              </a>
+              <a
+                href="#testimonials"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                to="/testimonials"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Testimonials
-              </Link>
+              </a>
               <Link
                 to="/contact"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
@@ -180,10 +200,10 @@ export function Navigation() {
               </Link>
               <div className="pt-2 space-y-2">
                 <Button variant="outline" size="sm" className="w-full" asChild>
-                  <Link to="/contact">Book A Demo</Link>
+                  <Link to="/application-form">Apply As Candidate</Link>
                 </Button>
-                <Button className="bg-gradient-primary hover:opacity-90 w-full" size="sm">
-                  Hire Top Talent
+                <Button className="bg-gradient-primary hover:opacity-90 w-full" size="sm" asChild>
+                  <Link to="/contact">Hire Top Talent</Link>
                 </Button>
               </div>
             </div>
