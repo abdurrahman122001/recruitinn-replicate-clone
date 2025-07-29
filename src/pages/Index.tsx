@@ -1,9 +1,21 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Award, Globe, Heart, Lightbulb, Search, Briefcase, Users as UsersIcon, Upload, Brain, Filter, UserCheck, ArrowRight, Sparkles, Clock, TrendingUp, CheckCircle, Factory, Zap, Building, Car, Package, Shield, Building2, Pill, Monitor } from "lucide-react";
+import { Award, Globe, Heart, Search, Briefcase, Users as UsersIcon, Upload, Brain, Filter, UserCheck, Clock, TrendingUp, CheckCircle, Factory, Building, Car, Package, Building2, Pill, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 import heroImage from "/hero-image.jpg";
+import {
+  ArrowRight,
+  Sparkles,
+  Target,
+  Users,
+  Zap,
+  Check,
+  BarChart2,
+  Lightbulb,
+  Shield,
+} from "lucide-react";
 
 const Index = () => {
   const stats = [
@@ -12,6 +24,7 @@ const Index = () => {
     { number: "500+", label: "Talent Engaged" },
     { number: "10+", label: "Global Reach - Countries" }
   ];
+  const [activeTab, setActiveTab] = useState("All");
 
   const values = [
     {
@@ -48,33 +61,43 @@ const Index = () => {
 
   const services = [
     {
+      category: "Executive Search",
       icon: Search,
       title: "Executive Search",
       description: "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success."
     },
     {
+      category: "International Hiring",
       icon: Briefcase,
       title: "International Hiring",
       description: "In today's global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders."
     },
     {
+      category: "Permanent Recruitment",
       icon: UsersIcon,
       title: "Permanent Recruitment",
       description: "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals."
     },
     {
+      category: "Staffing Solutions",
       icon: Lightbulb,
       title: "Staffing Solutions",
       description: "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced."
     },
     {
+      category: "RPO Services",
       icon: UsersIcon,
       title: "Recruitment Process Outsourcing (RPO)",
       description: "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions."
     }
   ];
 
-  const processSteps = [
+
+  const filteredServices = activeTab === "All"
+    ? services
+    : services.filter(service => service.category === activeTab);
+
+  const tabs = ["All", "Executive Search", "International Hiring", "Permanent Recruitment", "Staffing Solutions", "RPO Services"]; const processSteps = [
     {
       number: "01",
       title: "Requirement Analysis",
@@ -172,25 +195,20 @@ const Index = () => {
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center text-white">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-8 animate-fade-in">
-              <Sparkles className="w-4 h-4 text-white mr-2" />
-              <span className="text-sm font-medium text-white">Leading HR & Talent Acquisition Firm</span>
-            </div>
-            
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Find Top Talent with{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Zillions Connect
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
               We are among the fastest-growing HR and talent acquisition firms, dedicated to building long-term, strategic partnerships with our clients.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
                 <Link to="/application-form">Apply As Candidate</Link>
@@ -233,12 +251,15 @@ const Index = () => {
                 By delivering agile, scalable, and result-driven workforce solutions, we enable businesses to stay focused on their core operations while we take care of their evolving human capital needs.
               </p>
             </div>
-            
+
             <div className="grid lg:grid-cols-1 text-center gap-8 lg:gap-16 items-center mb-16">
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                  Our Mission
-                </h3>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                  Our{" "}
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">
+                    Mission
+                  </span>
+                </h2>
                 <div className="space-y-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
                   <p>
                     Backed by strong industry expertise and a robust delivery framework, Zillions Connect empowers organizations through customized recruitment and HR services. Our client-centric approach ensures cost-effective solutions without compromising on quality.
@@ -248,13 +269,17 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-    
+
             </div>
 
             {/* Values */}
             <div className="p-8 lg:p-12 rounded-2xl">
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-8 text-center">Our Values</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Our{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Values
+                </span>
+              </h2>              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((value, index) => (
                   <div key={index} className="bg-card p-6 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 group">
                     <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -273,11 +298,182 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              How{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                it Works
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
+              Technology and expertise for top recruitment results.
+            </p>
+          </div>
 
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 bg-blue-100 p-2 rounded-full">
+                  <Shield className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    Data-Driven Insights
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Our platform analyzes thousands of data points to provide
+                    actionable insights that optimize your hiring strategy and
+                    predict candidate success.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 bg-blue-100 p-2 rounded-full">
+                  <Lightbulb className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    Continuous Learning
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Our models continuously improve based on feedback and
+                    outcomes, ensuring better matches over time.
+                  </p>
+                </div>
+              </div>
+
+              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-sm px-5 py-3 rounded-lg mt-2">
+                Explore Features
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
+
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="https://cdn.prod.website-files.com/65a68db60fa2f99d12439063/66eab6e99b34488e4223dfff_consultant-1927881398.jpeg"
+                alt="HR professional analyzing data"
+                className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                alt="Team commitment"
+                className="w-full rounded-xl shadow-lg"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Our Commitment to{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Excellence
+                </span>
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
+                At <strong className="text-blue-600">Zillions</strong>, we're
+                driven by a passion for connecting exceptional talent with
+                visionary companies. Our commitment goes beyond just filling
+                positions - we're dedicated to building lasting partnerships.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-800">
+                      Right Talent, Right Time
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      We provide personnel with the perfect blend of skills and
+                      attitude to fuel your business growth.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-800">
+                      Employee Development
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      We enrich candidates through development initiatives that
+                      enhance their skills and drive higher achievements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-800">
+                      Strategic HR Solutions
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      We deliver initiatives that act as catalysts to accelerate
+                      your business performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Button className="mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-sm px-5 py-3 rounded-lg">
+                Learn About Our Values
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Services Section */}
-      <section id="services" className="py-16 lg:py-20 bg-secondary/30">
+      <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
+            {/* Services Menu Navigation */}
+            <div className="flex justify-center mb-12 lg:mb-16">
+              <div className="bg-card rounded-2xl p-2 shadow-card">
+                <div className="flex flex-wrap justify-center gap-2">
+                  {tabs.map((tab) => (
+                    <Button
+                      key={tab}
+                      variant={activeTab === tab ? "default" : "ghost"}
+                      className={
+                        activeTab === tab
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }
+                      onClick={() => setActiveTab(tab)}
+                    >
+                      {tab}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Our{" "}
@@ -286,26 +482,31 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Zillions Connect offers innovative HR solutions to engage, develop, and retain talent through specialized services.
+                Tailored HR solutions to empower your organization.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-              {services.map((service, index) => (
+              {filteredServices.map((service, index) => (
                 <div
                   key={index}
                   className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                     <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4">
                     {service.description}
                   </p>
+                  {service.details && (
+                    <p className="text-xs lg:text-sm text-muted-foreground/80 leading-relaxed">
+                      {service.details}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -332,7 +533,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative">
               {/* Connecting Line for larger screens */}
               <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"></div>
-              
+
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center group relative animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="bg-card rounded-2xl p-4 lg:p-6 shadow-card hover:shadow-elegant transition-all duration-500 group-hover:-translate-y-2 border border-border">
@@ -373,7 +574,7 @@ const Index = () => {
                 <div className="text-lg font-semibold text-foreground mb-2">Faster Hiring</div>
                 <p className="text-muted-foreground text-sm">Reduce time-to-hire with our optimized recruitment process</p>
               </div>
-              
+
               <div className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 group text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-6 h-6 text-white" />
@@ -382,7 +583,7 @@ const Index = () => {
                 <div className="text-lg font-semibold text-foreground mb-2">Perfect Match</div>
                 <p className="text-muted-foreground text-sm">High-quality candidates that exceed expectations</p>
               </div>
-              
+
               <div className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 group text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp className="w-6 h-6 text-white" />
