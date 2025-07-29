@@ -252,7 +252,7 @@ const Index = () => {
             </div>
 
             {/* Values */}
-            <div className="bg-secondary/30 p-8 lg:p-12 rounded-2xl">
+            <div className="p-8 lg:p-12 rounded-2xl">
               <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-8 text-center">Our Values</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((value, index) => (
