@@ -135,8 +135,8 @@ const Index = () => {
     },
     {
       icon: Shield,
-      title: "Defense & Aerospace",
-      description: "India's Defense and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation.",
+      title: "Defence & Aerospace",
+      description: "India's Defence and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation.",
     },
     {
       icon: Building,
