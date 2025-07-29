@@ -88,45 +88,63 @@ const Index = () => {
     {
       icon: Users,
       title: "Our People",
-      description:"Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. At Zillions Connect, our team brings a rare blend of industry insight, business acumen, and recruitment expertise. With deep understanding of client cultures and role requirements, they don’t just assess resumes—they identify real potential and future performance.",
+      description:
+        "Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. At Zillions Connect, our team brings a rare blend of industry insight, business acumen, and recruitment expertise. With deep understanding of client cultures and role requirements, they don’t just assess resumes—they identify real potential and future performance.",
     },
   ];
-
   const services = [
     {
       category: "Executive Search",
       icon: Search,
       title: "Executive Search",
-      description:
-        "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success.",
+      description: [
+        "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success. We understand that leaders shape strategy, culture, and performance—so finding the right fit goes far beyond matching qualifications. Our approach is consultative, discreet, and tailored to each client’s unique organizational goals, structure, and values.",
+        "With deep expertise across industries such as Renewable Energy, Oil & Gas, Power, EV, Manufacturing, FMCG, Pharma, Food Processing, Steel, Metal, Mining, Infrastructure and Real Estate, our search specialists bring unparalleled market intelligence and an extensive network of high-impact leaders. From Board-level and C-suite positions to functional leadership roles, we conduct rigorous assessments that focus on capability, cultural alignment, and future potential.",
+        "Our team operates as a strategic partner—advising not just on talent acquisition but also on succession planning, leadership benchmarking, and talent pipeline development. Every search is backed by a robust research process, behavioral evaluation, and a commitment to delivering not just candidates, but transformative leaders.",
+        "Zillions Connect is trusted by progressive organizations to lead their most critical hiring mandates—because we don’t just fill roles, we shape leadership for the future.",
+      ],
     },
     {
       category: "International Hiring",
       icon: Briefcase,
       title: "International Hiring",
-      description:
-        "In today's global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders.",
+      description: [
+        "In today’s global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders. Whether you are expanding into new markets or scaling operations overseas, we simplify the complexities of international recruitment with speed, precision, and compliance.",
+        "Our global hiring capabilities span across regions including the Middle East, Africa, Southeast Asia, and Europe, with a strong focus on industries like Energy, Infrastructure, Engineering, Manufacturing, Oil & Gas, Renewable Energy, and EVs. We bring a deep understanding of international labor laws, work visa requirements, compensation structures, and local market nuances—ensuring a smooth, end-to-end hiring process.",
+        "From sourcing and screening to onboarding and documentation, our team acts as an extension of your HR function, delivering skilled professionals who are not only technically qualified but culturally aligned with your organization. Whether it’s for project-based roles, permanent leadership positions, or niche technical expertise, we ensure every placement adds real value.",
+        "At Zillions Connect, we connect global opportunities with the right talent—bridging continents, cultures, and companies with confidence.",
+      ],
     },
     {
       category: "Permanent Recruitment",
       icon: UsersIcon,
       title: "Permanent Recruitment",
-      description:
-        "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals.",
+      description: [
+        "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals. Our process is designed to go beyond qualifications—to assess mindset, values, and future potential—ensuring every hire is a strategic asset to your organization.",
+        "We bring deep domain expertise across industries such as Renewable Energy, Oil & Gas, Power, EV, Manufacturing, FMCG, Pharma, Food Processing, Steel, Metal, Mining, Infrastructure and Real Estate, enabling us to understand the unique talent demands of each sector. From mid-level professionals to senior specialists and managerial talent, we offer end-to-end hiring support—from profiling and sourcing to selection, negotiation, and onboarding.",
+        "What sets us apart is our consultative approach and commitment to quality. We combine targeted search strategies, market intelligence, and behavioral assessment to deliver candidates who are aligned with your company culture and vision. Our dedicated account managers work closely with your team to ensure a seamless and efficient recruitment experience.",
+        "At Zillions Connect, we don’t just fill vacancies—we help you build a workforce that drives performance, stability, and long-term success.",
+      ],
     },
     {
       category: "Staffing Solutions",
       icon: Lightbulb,
       title: "Staffing Solutions",
-      description:
-        "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced.",
+      description: [
+        "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced—without compromising on talent quality.",
+        "We offer customized staffing services to meet short-term, project-based, and contract hiring needs across a wide range of industries.",
+      ],
     },
     {
       category: "RPO Services",
       icon: UsersIcon,
       title: "Recruitment Process Outsourcing (RPO)",
-      description:
-        "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions.",
+      description: [
+        "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions. Our RPO services are designed to act as a seamless extension of your internal HR team—managing part or all of your recruitment lifecycle with precision, agility, and accountability.",
+        "From talent strategy and workforce planning to sourcing, screening, interviewing, and onboarding, we handle every step of the hiring process. Our RPO model is built on flexibility—we tailor our approach to your business size, hiring volume, industry, and geographical spread.",
+        "Whether you're a fast-growing company or a large enterprise managing complex talent needs, we bring the tools, technology, and expertise to elevate your recruitment outcomes.",
+        "At Zillions Connect, RPO isn't just outsourcing—it's strategic talent partnership that delivers measurable impact.",
+      ],
     },
   ];
 
@@ -310,72 +328,91 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 lg:py-20">
+      <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <div className="max-w-6xl mx-auto space-y-24">
+            {/* About Section */}
+            <div className="text-center space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
                 About{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Zillions Connect
                 </span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
-                By delivering agile, scalable, and result-driven workforce
-                solutions, we enable businesses to stay focused on their core
-                operations while we take care of their evolving human capital
-                needs.
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-1 text-center gap-8 lg:gap-16 items-center mb-16">
-              <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  Our{" "}
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">
-                    Mission
-                  </span>
-                </h2>
-                <div className="space-y-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    Backed by strong industry expertise and a robust delivery
-                    framework, Zillions Connect empowers organizations through
-                    customized recruitment and HR services. Our client-centric
-                    approach ensures cost-effective solutions without
-                    compromising on quality.
-                  </p>
-                  <p>
-                    What sets us apart is our unique hybrid model—merging the
-                    strategic depth of management consulting with the efficiency
-                    and responsiveness of traditional staffing. At Zillions
-                    Connect, we don't just fill roles—we build futures.
-                  </p>
-                </div>
+              <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
+                <p>
+                  We are among the fastest-growing HR and talent acquisition
+                  firms, dedicated to long-term, strategic partnerships with our
+                  clients. We deliver agile, scalable, and result-driven
+                  workforce solutions— helping businesses stay focused on their
+                  core goals.
+                </p>
+                <p>
+                  Zillions Connect empowers organizations through customized
+                  recruitment and HR services. Our client-centric approach
+                  ensures cost-effective, high-quality solutions aligned with
+                  long-term business objectives.
+                </p>
+                <p>
+                  What sets us apart? A unique hybrid model—combining the
+                  strategic depth of management consulting with the
+                  responsiveness of staffing. This helps us deliver flexible
+                  solutions across Recruitment and Managed HR Services.
+                </p>
+                <p>
+                  At Zillions Connect, we don’t just fill roles—we build
+                  futures. Through integrated talent strategies, we help clients
+                  identify and develop future-ready leaders for lasting impact.
+                </p>
               </div>
             </div>
 
-            {/* Values */}
-            <div className="p-8 lg:p-12 rounded-2xl">
-              <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            {/* Mission Section */}
+            <div className="text-center space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+                Our{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Mission
+                </span>
+              </h2>
+              <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
+                <p>
+                  Backed by strong industry expertise and a robust delivery
+                  framework, Zillions Connect empowers organizations through
+                  customized recruitment and HR services. We ensure
+                  cost-effective solutions without compromise.
+                </p>
+                <p>
+                  Our hybrid model merges consulting-level strategy with rapid,
+                  scalable staffing, enabling us to deliver meaningful business
+                  outcomes—not just headcount.
+                </p>
+              </div>
+            </div>
+
+            {/* Values Section */}
+            <div className="text-center space-y-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
                 Our{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Values
                 </span>
-              </h2>{" "}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-2">
                 {values.map((value, index) => (
                   <div
                     key={index}
-                    className="bg-card p-6 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 group"
+                    className="bg-card p-6 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 group border border-border flex flex-col items-center"
                   >
-                    <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <value.icon className="w-5 h-5 text-white" />
+                    <div className="relative w-full flex items-center mb-4">
+                      <div className="absolute left-0 flex items-center justify-center w-12 h-12 bg-gradient-primary rounded-xl group-hover:scale-110 transition-transform">
+                        <value.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="w-full text-lg font-semibold text-card-foreground text-center">
+                        {value.title}
+                      </h4>
                     </div>
-                    <h4 className="text-lg font-bold text-card-foreground mb-3">
-                      {value.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed pt-4">
                       {value.description}
                     </p>
                   </div>
@@ -385,6 +422,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       <section className="py-12 sm:py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
@@ -431,11 +469,6 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-
-              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-sm px-5 py-3 rounded-lg mt-2">
-                Explore Features
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
             </div>
 
             <div className="relative rounded-xl overflow-hidden shadow-lg">
@@ -526,11 +559,6 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-
-              <Button className="mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-sm px-5 py-3 rounded-lg">
-                Learn About Our Values
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
             </div>
           </div>
         </div>
@@ -586,14 +614,23 @@ const Index = () => {
                   <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  {service.details && (
-                    <p className="text-xs lg:text-sm text-muted-foreground/80 leading-relaxed">
-                      {service.details}
-                    </p>
-                  )}
+                  {/* Description rendered as paragraphs */}
+                  <div>
+                    {Array.isArray(service.description) ? (
+                      service.description.map((para, idx) => (
+                        <p
+                          key={idx}
+                          className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0"
+                        >
+                          {para}
+                        </p>
+                      ))
+                    ) : (
+                      <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
