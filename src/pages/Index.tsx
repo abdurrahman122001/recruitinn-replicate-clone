@@ -353,7 +353,7 @@ const Index = () => {
 
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://cdn.prod.website-files.com/65a68db60fa2f99d12439063/66eab6e99b34488e4223dfff_consultant-1927881398.jpeg"
+                src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-6c08-61f5-b3a1-cc0b646f069d/raw?se=2025-07-29T10%3A10%3A49Z&sp=r&sv=2024-08-04&sr=b&scid=db185db5-e350-5058-ac11-1634de2bebf5&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-29T09%3A00%3A38Z&ske=2025-07-30T09%3A00%3A38Z&sks=b&skv=2024-08-04&sig=uJSwbnMgjHj1n59kaPFDSIVErTakCQfk1J5LVPHykXU%3D"
                 alt="HR professional analyzing data"
                 className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -367,7 +367,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-dedc-61f8-8238-7f9e0e358502/raw?se=2025-07-29T10%3A26%3A11Z&sp=r&sv=2024-08-04&sr=b&scid=ff949737-7a01-5071-87a6-8f891c4b912e&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-29T08%3A33%3A47Z&ske=2025-07-30T08%3A33%3A47Z&sks=b&skv=2024-08-04&sig=VND0gWgr0T/85CO5WzHaxYTjzd/iJYrGpJH%2Bu3wQMPo%3D"
                 alt="Team commitment"
                 className="w-full rounded-xl shadow-lg"
               />
