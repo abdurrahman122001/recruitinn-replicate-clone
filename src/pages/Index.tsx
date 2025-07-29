@@ -182,7 +182,7 @@ const Index = () => {
             
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Find Top Talent with{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Zillions Connect
               </span>
             </h1>
@@ -194,9 +194,6 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
                 <Link to="/application-form">Apply As Candidate</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                <Link to="/contact">Hire Talent</Link>
               </Button>
             </div>
           </div>
@@ -237,7 +234,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16">
+            <div className="grid lg:grid-cols-1 text-center gap-8 lg:gap-16 items-center mb-16">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                   Our Mission
@@ -251,12 +248,7 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="bg-card p-8 rounded-2xl shadow-card">
-                <h4 className="text-xl font-bold text-foreground mb-4">Our People</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. With deep understanding of client cultures and role requirements, they don't just assess resumes—they identify real potential and future performance.
-                </p>
-              </div>
+    
             </div>
 
             {/* Values */}

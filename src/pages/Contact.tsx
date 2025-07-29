@@ -50,9 +50,7 @@ export default function Contact() {
       details: [
         "info@zillionsconnect.com",
         "+91-9650914095",
-        "Available 24/7",
       ],
-      action: "Send Email",
     },
   ];
 
@@ -184,7 +182,7 @@ export default function Contact() {
                         onChange={(e) =>
                           handleInputChange("phone", e.target.value)
                         }
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91-9650914095"
                       />
                     </div>
                   </div>
@@ -291,9 +289,6 @@ export default function Contact() {
                               </p>
                             ))}
                           </div>
-                          <Button variant="outline" size="sm">
-                            {info.action}
-                          </Button>
                         </div>
                       </div>
                     </div>
@@ -326,15 +321,6 @@ export default function Contact() {
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-2 mb-2">
-                        <MessageCircle className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">
-                          24/7
-                        </span>
-                      </div>
-                      <p className="text-sm text-white/80">Support</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-2 mb-2">
                         <Calendar className="w-5 h-5" />
                         <span className="text-lg lg:text-xl font-bold">
                           Free
@@ -345,38 +331,6 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 lg:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-base lg:text-lg text-muted-foreground">
-                Quick answers to common questions about Zillions
-              </p>
-            </div>
-
-            <div className="space-y-4 lg:space-y-6">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card"
-                >
-                  <h3 className="text-lg font-bold text-card-foreground mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
