@@ -1,6 +1,27 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Award, Globe, Heart, Search, Briefcase, Users as UsersIcon, Upload, Brain, Filter, UserCheck, Clock, TrendingUp, CheckCircle, Factory, Building, Car, Package, Building2, Pill, Monitor } from "lucide-react";
+import {
+  Award,
+  Globe,
+  Heart,
+  Search,
+  Briefcase,
+  Users as UsersIcon,
+  Upload,
+  Brain,
+  Filter,
+  UserCheck,
+  Clock,
+  TrendingUp,
+  CheckCircle,
+  Factory,
+  Building,
+  Car,
+  Package,
+  Building2,
+  Pill,
+  Monitor,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
@@ -16,13 +37,14 @@ import {
   Lightbulb,
   Shield,
 } from "lucide-react";
-
+import bg1 from "/bg-2.png";
+import bg2 from "/bg-1.png";
 const Index = () => {
   const stats = [
     { number: "2021", label: "Active Since" },
     { number: "200+", label: "Clients Served" },
     { number: "500+", label: "Talent Engaged" },
-    { number: "10+", label: "Global Reach - Countries" }
+    { number: "10+", label: "Global Reach - Countries" },
   ];
   const [activeTab, setActiveTab] = useState("All");
 
@@ -30,33 +52,44 @@ const Index = () => {
     {
       icon: Target,
       title: "Innovation First",
-      description: "We continuously evolve our strategies, tools, and processes to stay ahead in a dynamic talent landscape. By embracing new technologies, data-driven insights, and creative problem-solving, we deliver smarter, faster, and more effective recruitment solutions."
+      description:
+        "At Zillions Connect, innovation is not an option—it’s a mindset. We continuously evolve our strategies, tools, and processes to stay ahead in a dynamic talent landscape. By embracing new technologies, data-driven insights, and creative problem-solving, we deliver smarter, faster, and more effective recruitment solutions. Our commitment to innovation empowers clients to stay future-ready and competitive in their industries.",
     },
     {
       icon: Heart,
       title: "Human-Centric",
-      description: "People are at the heart of everything we do. We believe in building genuine, long-lasting relationships—with our clients, candidates, and team members. We listen with empathy, act with integrity, and create experiences that prioritize trust, transparency, and mutual respect."
+      description:
+        "People are at the heart of everything we do. At Zillions Connect, we believe in building genuine, long-lasting relationships—with our clients, candidates, and team members. We listen with empathy, act with integrity, and create experiences that prioritize trust, transparency, and mutual respect. Our human-centric approach ensures every interaction adds value and drives meaningful outcomes.",
     },
     {
       icon: Award,
       title: "Excellence",
-      description: "Excellence is our standard, not a goal. We are committed to delivering the highest quality in every engagement. We set the bar high, continually refine our approach, and hold ourselves accountable to consistently exceed expectations."
+      description:
+        "Excellence is our standard, not a goal. At Zillions Connect, we are committed to delivering the highest quality in every engagement—be it client service, candidate experience, or internal operations. We set the bar high, continually refine our approach, and hold ourselves accountable to consistently exceed expectations. This relentless pursuit of excellence drives results and builds enduring partnerships.",
     },
     {
       icon: Globe,
       title: "Accessibility",
-      description: "We believe true partnerships are built on openness and approachability. We ensure clear communication, quick turnarounds, and a supportive experience at every step. Our inclusive and transparent culture makes collaboration effortless and effective."
+      description:
+        "We believe true partnerships are built on openness and approachability. At Zillions Connect, accessibility means being available, responsive, and easy to work with—whether you're a client seeking solutions or a candidate exploring opportunities. We ensure clear communication, quick turnarounds, and a supportive experience at every step. Our inclusive and transparent culture makes collaboration effortless and effective.",
     },
     {
       icon: Lightbulb,
       title: "Continuous Learning",
-      description: "We thrive in a culture of curiosity, growth, and ongoing improvement. Continuous learning fuels our ability to adapt, innovate, and lead in an ever-changing recruitment landscape. We invest in upskilling our team, staying updated with industry trends."
+      description:
+        "We thrive in a culture of curiosity, growth, and ongoing improvement. At Zillions Connect, continuous learning fuels our ability to adapt, innovate, and lead in an ever-changing recruitment landscape. We invest in upskilling our team, staying updated with industry trends, and embracing feedback as a tool for evolution. This learning mindset empowers us to deliver forward-thinking solutions with confidence and competence.",
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "We believe that the best results come from working together. Collaboration is more than teamwork—it's about aligning goals, sharing knowledge, and co-creating success with our clients, candidates, and colleagues."
-    }
+      description:
+        "We believe that the best results come from working together. At Zillions Connect, collaboration is more than teamwork—it’s about aligning goals, sharing knowledge, and co-creating success with our clients, candidates, and colleagues. We foster a culture of openness, mutual respect, and collective problem-solving to ensure that every partnership delivers real, lasting impact.",
+    },
+    {
+      icon: Users,
+      title: "Our People",
+      description:"Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. At Zillions Connect, our team brings a rare blend of industry insight, business acumen, and recruitment expertise. With deep understanding of client cultures and role requirements, they don’t just assess resumes—they identify real potential and future performance.",
+    },
   ];
 
   const services = [
@@ -64,68 +97,86 @@ const Index = () => {
       category: "Executive Search",
       icon: Search,
       title: "Executive Search",
-      description: "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success."
+      description:
+        "At Zillions Connect, our Executive Search services are designed to identify and attract top-tier leadership talent that drives long-term business success.",
     },
     {
       category: "International Hiring",
       icon: Briefcase,
       title: "International Hiring",
-      description: "In today's global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders."
+      description:
+        "In today's global economy, talent knows no boundaries—and neither do we. Zillions Connect offers specialized International Hiring services to help organizations access world-class talent across borders.",
     },
     {
       category: "Permanent Recruitment",
       icon: UsersIcon,
       title: "Permanent Recruitment",
-      description: "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals."
+      description:
+        "Finding the right permanent talent is critical to building a strong, stable, and scalable workforce. At Zillions Connect, we specialize in Permanent Recruitment solutions tailored to your long-term business goals.",
     },
     {
       category: "Staffing Solutions",
       icon: Lightbulb,
       title: "Staffing Solutions",
-      description: "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced."
+      description:
+        "In a fast-paced, project-driven world, workforce flexibility is a strategic advantage. At Zillions Connect, our Staffing Solutions are designed to help organizations stay agile, responsive, and fully resourced.",
     },
     {
       category: "RPO Services",
       icon: UsersIcon,
       title: "Recruitment Process Outsourcing (RPO)",
-      description: "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions."
-    }
+      description:
+        "For organizations seeking to streamline, scale, and strengthen their hiring function, Zillions Connect offers comprehensive Recruitment Process Outsourcing (RPO) solutions.",
+    },
   ];
 
+  const filteredServices =
+    activeTab === "All"
+      ? services
+      : services.filter((service) => service.category === activeTab);
 
-  const filteredServices = activeTab === "All"
-    ? services
-    : services.filter(service => service.category === activeTab);
-
-  const tabs = ["All", "Executive Search", "International Hiring", "Permanent Recruitment", "Staffing Solutions", "RPO Services"]; const processSteps = [
+  const tabs = [
+    "All",
+    "Executive Search",
+    "International Hiring",
+    "Permanent Recruitment",
+    "Staffing Solutions",
+    "RPO Services",
+  ];
+  const processSteps = [
     {
       number: "01",
       title: "Requirement Analysis",
-      description: "We begin by deeply understanding your business, role expectations, culture, and timelines. This ensures our search is sharply aligned with your needs.",
+      description:
+        "We begin by deeply understanding your business, role expectations, culture, and timelines. This ensures our search is sharply aligned with your needs.",
       icon: Upload,
     },
     {
       number: "02",
       title: "Talent Mapping & Sourcing",
-      description: "Using our proprietary database, targeted outreach, and market intelligence, we identify active and passive candidates who best match the job and company profile.",
+      description:
+        "Using our proprietary database, targeted outreach, and market intelligence, we identify active and passive candidates who best match the job and company profile.",
       icon: Brain,
     },
     {
       number: "03",
       title: "Screening & Evaluation",
-      description: "Each candidate undergoes a rigorous screening process that includes behavioral interviews, technical assessments, and cultural fit evaluations.",
+      description:
+        "Each candidate undergoes a rigorous screening process that includes behavioral interviews, technical assessments, and cultural fit evaluations.",
       icon: Filter,
     },
     {
       number: "04",
       title: "Shortlisting & Coordination",
-      description: "We present a refined shortlist of high-potential candidates, manage scheduling, feedback loops, and ensure a smooth interview experience for both parties.",
+      description:
+        "We present a refined shortlist of high-potential candidates, manage scheduling, feedback loops, and ensure a smooth interview experience for both parties.",
       icon: UserCheck,
     },
     {
       number: "05",
       title: "Offer Management & Onboarding",
-      description: "From offer negotiation to resignation handling and onboarding follow-up, we ensure a seamless transition and strong start for your new hire.",
+      description:
+        "From offer negotiation to resignation handling and onboarding follow-up, we ensure a seamless transition and strong start for your new hire.",
       icon: Users,
     },
   ];
@@ -134,59 +185,72 @@ const Index = () => {
     {
       icon: Zap,
       title: "Power & Energy",
-      description: "India's power sector is undergoing rapid transformation with a strong shift toward renewables, while thermal and hydro continue to support base load demands.",
+      description:
+        "India's power sector is undergoing rapid transformation with a strong shift toward renewables, while thermal and hydro continue to support base load demands.",
     },
     {
       icon: Factory,
       title: "Oil & Gas",
-      description: "The Oil & Gas industry continues to play a critical role in global energy supply, even as it navigates the dual challenge of energy transition and decarbonization.",
+      description:
+        "The Oil & Gas industry continues to play a critical role in global energy supply, even as it navigates the dual challenge of energy transition and decarbonization.",
     },
     {
       icon: Building2,
       title: "Manufacturing",
-      description: "Manufacturing is gaining momentum through automation, digitalization, and increased global demand. Industries need professionals in production, quality, supply chain, and plant operations.",
+      description:
+        "Manufacturing is gaining momentum through automation, digitalization, and increased global demand. Industries need professionals in production, quality, supply chain, and plant operations.",
     },
     {
       icon: Car,
       title: "EV & Automobile",
-      description: "The EV and automobile sector is undergoing a major shift toward clean mobility, smart technologies, and localized manufacturing.",
+      description:
+        "The EV and automobile sector is undergoing a major shift toward clean mobility, smart technologies, and localized manufacturing.",
     },
     {
       icon: Package,
       title: "FMCG, Food Processing & Agri Business",
-      description: "The FMCG, food processing, and agri business sectors are experiencing strong growth driven by rising consumer demand, rural market expansion.",
+      description:
+        "The FMCG, food processing, and agri business sectors are experiencing strong growth driven by rising consumer demand, rural market expansion.",
     },
     {
       icon: Shield,
       title: "Defence & Aerospace",
-      description: "India's Defence and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation.",
+      description:
+        "India's Defence and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation.",
     },
     {
       icon: Building,
       title: "Construction, Infrastructure & PMC",
-      description: "The construction and infrastructure sector is a key pillar of economic growth, driven by large-scale urbanization, smart cities.",
+      description:
+        "The construction and infrastructure sector is a key pillar of economic growth, driven by large-scale urbanization, smart cities.",
     },
     {
       icon: Factory,
       title: "Steel, Metal & Mining",
-      description: "The Steel, Metal, and Mining sector remains the backbone of industrial growth, with renewed momentum driven by infrastructure expansion.",
+      description:
+        "The Steel, Metal, and Mining sector remains the backbone of industrial growth, with renewed momentum driven by infrastructure expansion.",
     },
     {
       icon: Pill,
       title: "Pharma & Healthcare",
-      description: "India's Pharma and Healthcare sector is growing rapidly with advancements in R&D, biotechnology, digital health.",
+      description:
+        "India's Pharma and Healthcare sector is growing rapidly with advancements in R&D, biotechnology, digital health.",
     },
     {
       icon: Monitor,
       title: "Consumer Services & Electronic Manufacturing",
-      description: "The rise of digital lifestyles, smart devices, and tech-enabled services is fueling rapid growth in consumer services and electronic manufacturing.",
-    }
+      description:
+        "The rise of digital lifestyles, smart devices, and tech-enabled services is fueling rapid growth in consumer services and electronic manufacturing.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -206,11 +270,17 @@ const Index = () => {
             </h1>
 
             <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
-              We are among the fastest-growing HR and talent acquisition firms, dedicated to building long-term, strategic partnerships with our clients.
+              We are among the fastest-growing HR and talent acquisition firms,
+              dedicated to building long-term, strategic partnerships with our
+              clients.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
+              <Button
+                size="lg"
+                className="bg-gradient-primary hover:opacity-90"
+                asChild
+              >
                 <Link to="/application-form">Apply As Candidate</Link>
               </Button>
             </div>
@@ -223,7 +293,11 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center max-w-4xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="space-y-2 animate-scale-in hover-scale" style={{ animationDelay: `${index * 100}ms` }}>
+              <div
+                key={index}
+                className="space-y-2 animate-scale-in hover-scale"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
                   {stat.number}
                 </div>
@@ -248,7 +322,10 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
-                By delivering agile, scalable, and result-driven workforce solutions, we enable businesses to stay focused on their core operations while we take care of their evolving human capital needs.
+                By delivering agile, scalable, and result-driven workforce
+                solutions, we enable businesses to stay focused on their core
+                operations while we take care of their evolving human capital
+                needs.
               </p>
             </div>
 
@@ -262,14 +339,20 @@ const Index = () => {
                 </h2>
                 <div className="space-y-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Backed by strong industry expertise and a robust delivery framework, Zillions Connect empowers organizations through customized recruitment and HR services. Our client-centric approach ensures cost-effective solutions without compromising on quality.
+                    Backed by strong industry expertise and a robust delivery
+                    framework, Zillions Connect empowers organizations through
+                    customized recruitment and HR services. Our client-centric
+                    approach ensures cost-effective solutions without
+                    compromising on quality.
                   </p>
                   <p>
-                    What sets us apart is our unique hybrid model—merging the strategic depth of management consulting with the efficiency and responsiveness of traditional staffing. At Zillions Connect, we don't just fill roles—we build futures.
+                    What sets us apart is our unique hybrid model—merging the
+                    strategic depth of management consulting with the efficiency
+                    and responsiveness of traditional staffing. At Zillions
+                    Connect, we don't just fill roles—we build futures.
                   </p>
                 </div>
               </div>
-
             </div>
 
             {/* Values */}
@@ -279,9 +362,13 @@ const Index = () => {
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Values
                 </span>
-              </h2>              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              </h2>{" "}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((value, index) => (
-                  <div key={index} className="bg-card p-6 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 group">
+                  <div
+                    key={index}
+                    className="bg-card p-6 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 group"
+                  >
                     <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <value.icon className="w-5 h-5 text-white" />
                     </div>
@@ -353,7 +440,7 @@ const Index = () => {
 
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-6c08-61f5-b3a1-cc0b646f069d/raw?se=2025-07-29T10%3A10%3A49Z&sp=r&sv=2024-08-04&sr=b&scid=db185db5-e350-5058-ac11-1634de2bebf5&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-29T09%3A00%3A38Z&ske=2025-07-30T09%3A00%3A38Z&sks=b&skv=2024-08-04&sig=uJSwbnMgjHj1n59kaPFDSIVErTakCQfk1J5LVPHykXU%3D"
+                src={bg1}
                 alt="HR professional analyzing data"
                 className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -367,7 +454,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
-                src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-dedc-61f8-8238-7f9e0e358502/raw?se=2025-07-29T10%3A26%3A11Z&sp=r&sv=2024-08-04&sr=b&scid=ff949737-7a01-5071-87a6-8f891c4b912e&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-29T08%3A33%3A47Z&ske=2025-07-30T08%3A33%3A47Z&sks=b&skv=2024-08-04&sig=VND0gWgr0T/85CO5WzHaxYTjzd/iJYrGpJH%2Bu3wQMPo%3D"
+                src={bg2}
                 alt="Team commitment"
                 className="w-full rounded-xl shadow-lg"
               />
@@ -526,7 +613,10 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
-                At Zillions Connect, our recruitment process is built on precision, speed, and strategic alignment. We combine deep industry knowledge with a structured approach to deliver the right talent—every time.
+                At Zillions Connect, our recruitment process is built on
+                precision, speed, and strategic alignment. We combine deep
+                industry knowledge with a structured approach to deliver the
+                right talent—every time.
               </p>
             </div>
 
@@ -535,11 +625,17 @@ const Index = () => {
               <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"></div>
 
               {processSteps.map((step, index) => (
-                <div key={index} className="text-center group relative animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div
+                  key={index}
+                  className="text-center group relative animate-fade-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
                   <div className="bg-card rounded-2xl p-4 lg:p-6 shadow-card hover:shadow-elegant transition-all duration-500 group-hover:-translate-y-2 border border-border">
                     {/* Step Number */}
                     <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
-                      <span className="text-white font-bold text-sm lg:text-lg">{step.number}</span>
+                      <span className="text-white font-bold text-sm lg:text-lg">
+                        {step.number}
+                      </span>
                     </div>
 
                     {/* Icon */}
@@ -548,8 +644,12 @@ const Index = () => {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-sm lg:text-lg font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-xs lg:text-sm">{step.description}</p>
+                    <h3 className="text-sm lg:text-lg font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-xs lg:text-sm">
+                      {step.description}
+                    </p>
                   </div>
 
                   {/* Connecting Arrow */}
@@ -570,27 +670,45 @@ const Index = () => {
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">80%</div>
-                <div className="text-lg font-semibold text-foreground mb-2">Faster Hiring</div>
-                <p className="text-muted-foreground text-sm">Reduce time-to-hire with our optimized recruitment process</p>
+                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+                  80%
+                </div>
+                <div className="text-lg font-semibold text-foreground mb-2">
+                  Faster Hiring
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Reduce time-to-hire with our optimized recruitment process
+                </p>
               </div>
 
               <div className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 group text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">95%</div>
-                <div className="text-lg font-semibold text-foreground mb-2">Perfect Match</div>
-                <p className="text-muted-foreground text-sm">High-quality candidates that exceed expectations</p>
+                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+                  95%
+                </div>
+                <div className="text-lg font-semibold text-foreground mb-2">
+                  Perfect Match
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  High-quality candidates that exceed expectations
+                </p>
               </div>
 
               <div className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 group text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">75%</div>
-                <div className="text-lg font-semibold text-foreground mb-2">Cost Reduction</div>
-                <p className="text-muted-foreground text-sm">Significant savings on recruitment expenses</p>
+                <div className="text-2xl lg:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+                  75%
+                </div>
+                <div className="text-lg font-semibold text-foreground mb-2">
+                  Cost Reduction
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Significant savings on recruitment expenses
+                </p>
               </div>
             </div>
           </div>
@@ -598,7 +716,10 @@ const Index = () => {
       </section>
 
       {/* Industry Excellence Section */}
-      <section id="industry-excellence" className="py-16 lg:py-20 bg-secondary/30">
+      <section
+        id="industry-excellence"
+        className="py-16 lg:py-20 bg-secondary/30"
+      >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
@@ -609,7 +730,8 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Deep expertise across diverse industries with specialized talent solutions.
+                Deep expertise across diverse industries with specialized talent
+                solutions.
               </p>
             </div>
 
@@ -648,28 +770,40 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Success stories from companies who trust Zillions Connect for their talent needs.
+                Success stories from companies who trust Zillions Connect for
+                their talent needs.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3].map((_, index) => (
-                <div key={index} className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300">
+                <div
+                  key={index}
+                  className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300"
+                >
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mr-4">
                       <span className="text-white font-bold">C</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-foreground">Client Company</h4>
-                      <p className="text-sm text-muted-foreground">Industry Leader</p>
+                      <h4 className="font-bold text-foreground">
+                        Client Company
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Industry Leader
+                      </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    "Zillions Connect transformed our hiring process. Their expertise in finding the right talent has been instrumental in our growth."
+                    "Zillions Connect transformed our hiring process. Their
+                    expertise in finding the right talent has been instrumental
+                    in our growth."
                   </p>
                   <div className="flex text-yellow-400">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <span key={star} className="text-lg">★</span>
+                      <span key={star} className="text-lg">
+                        ★
+                      </span>
                     ))}
                   </div>
                 </div>
