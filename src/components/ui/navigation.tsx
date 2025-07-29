@@ -30,7 +30,11 @@ export function Navigation() {
               className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname === '/') {
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#about';
+                }
               }}
             >
               About Us
@@ -40,7 +44,11 @@ export function Navigation() {
               className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname === '/') {
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#services';
+                }
               }}
             >
               Services
@@ -50,7 +58,11 @@ export function Navigation() {
               className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname === '/') {
+                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#process';
+                }
               }}
             >
               Process
@@ -60,7 +72,11 @@ export function Navigation() {
               className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname === '/') {
+                  document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#industry-excellence';
+                }
               }}
             >
               Industry Excellence
@@ -70,7 +86,11 @@ export function Navigation() {
               className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname === '/') {
+                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#testimonials';
+                }
               }}
             >
               Testimonials
@@ -142,7 +162,11 @@ export function Navigation() {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMenuOpen(false);
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === '/') {
+                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#about';
+                  }
                 }}
               >
                 About Us
@@ -153,7 +177,11 @@ export function Navigation() {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMenuOpen(false);
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === '/') {
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#services';
+                  }
                 }}
               >
                 Services
@@ -164,7 +192,11 @@ export function Navigation() {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMenuOpen(false);
-                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === '/') {
+                    document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#process';
+                  }
                 }}
               >
                 Process
@@ -175,7 +207,11 @@ export function Navigation() {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMenuOpen(false);
-                  document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === '/') {
+                    document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#industry-excellence';
+                  }
                 }}
               >
                 Industry Excellence
@@ -186,7 +222,11 @@ export function Navigation() {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMenuOpen(false);
-                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === '/') {
+                    document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#testimonials';
+                  }
                 }}
               >
                 Testimonials
