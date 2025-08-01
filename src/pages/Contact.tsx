@@ -319,15 +319,6 @@ export default function Contact() {
                       </div>
                       <p className="text-sm text-white/80">Happy Clients</p>
                     </div>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-2 mb-2">
-                        <Calendar className="w-5 h-5" />
-                        <span className="text-lg lg:text-xl font-bold">
-                          Free
-                        </span>
-                      </div>
-                      <p className="text-sm text-white/80">Demo</p>
-                    </div>
                   </div>
                 </div>
               </div>
