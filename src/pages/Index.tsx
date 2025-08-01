@@ -551,7 +551,7 @@ const Index = () => {
         </div>
       </section>
       {/* Services Section */}
-      <section className="py-16 lg:py-20">
+      <section className="py-16 lg:py-20" id="services">
         <div className="container mx-auto">
           <div className="mx-auto">
             {/* Services Menu Navigation */}
