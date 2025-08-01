@@ -38,7 +38,7 @@ import {
 } from "lucide-react";
 import bg1 from "/bg-2.png";
 import bg2 from "/bg-1.png";
-import indianProfessionalsBg from "/indian-professionals-bg.jpg";
+import indianProfessionalsBg from "/bg-image.jpg";
 const Index = () => {
   const stats = [
     { number: "2021", label: "Active Since" },
@@ -275,7 +275,7 @@ const Index = () => {
             backgroundImage: `url(${indianProfessionalsBg})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/30"></div> {/* Changed from bg-black/40 to bg-black/30 */}
         </div>
 
         <div className="relative z-10 container mx-auto text-center text-white">
@@ -381,6 +381,62 @@ const Index = () => {
               </div>
             </div>
 
+            <section className="py-12 sm:py-16 bg-white">
+              <div className="container mx-auto">
+                <div className="text-center mb-8 sm:mb-12">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+                    Our{" "}
+                    <span className="bg-gradient-primary bg-clip-text text-transparent">
+                      Vision
+                    </span>
+                  </h2>
+                  <p className="mt-4 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+                    "Human Capital Accelerator" for aligning Organizations' Human Resources with their Overall Company Strategy
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                  <div className="space-y-8">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 bg-blue-100 p-3 rounded-full">
+                        <Shield className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">
+                          Strategic Alignment
+                        </h3>
+                        <p className="text-base text-gray-600 mt-2">
+                          We bridge the gap between HR functions and business objectives, ensuring your human capital strategy directly supports your company's vision and goals.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 bg-blue-100 p-3 rounded-full">
+                        <Lightbulb className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">
+                          Organizational Excellence
+                        </h3>
+                        <p className="text-base text-gray-600 mt-2">
+                          Our approach transforms HR from an administrative function to a strategic driver of business performance and competitive advantage.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src={bg1}
+                      alt="Strategic HR alignment"
+                      className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Values Section */}
             <div className="text-center space-y-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
@@ -409,66 +465,6 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              How{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                it Works
-              </span>
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
-              Technology and expertise for top recruitment results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 bg-blue-100 p-2 rounded-full">
-                  <Shield className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Data-Driven Insights
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Our platform analyzes thousands of data points to provide
-                    actionable insights that optimize your hiring strategy and
-                    predict candidate success.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 bg-blue-100 p-2 rounded-full">
-                  <Lightbulb className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Continuous Learning
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Our models continuously improve based on feedback and
-                    outcomes, ensuring better matches over time.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <img
-                src={bg1}
-                alt="HR professional analyzing data"
-                className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20"></div> */}
             </div>
           </div>
         </div>
