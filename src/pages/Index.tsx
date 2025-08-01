@@ -204,61 +204,61 @@ const Index = () => {
       icon: Zap,
       title: "Power & Energy",
       description:
-        "India's power sector is undergoing rapid transformation with a strong shift toward renewables, while thermal and hydro continue to support base load demands.",
+        "India’s power sector is undergoing rapid transformation with a strong shift toward renewables, while thermal and hydro continue to support base load demands. With massive investments and policy reforms, demand for skilled engineers, EPC specialists, and sustainability leaders is rising—fueling one of the most talent-critical transitions in the energy landscape.",
     },
     {
       icon: Factory,
       title: "Oil & Gas",
       description:
-        "The Oil & Gas industry continues to play a critical role in global energy supply, even as it navigates the dual challenge of energy transition and decarbonization.",
+        "The Oil & Gas industry continues to play a critical role in global energy supply, even as it navigates the dual challenge of energy transition and decarbonization. With new investments in exploration, LNG infrastructure, and refinery upgrades, the sector is embracing digital innovation, automation, and ESG compliance. Talent demand is shifting toward multi-disciplinary professionals—especially in process engineering, HSE, asset management, and project execution. Global mobility, regulatory understanding, and digital fluency are becoming essential, making specialized hiring more competitive and time-sensitive than ever.",
     },
     {
       icon: Building2,
       title: "Manufacturing",
       description:
-        "Manufacturing is gaining momentum through automation, digitalization, and increased global demand. Industries need professionals in production, quality, supply chain, and plant operations.",
+        "Manufacturing is gaining momentum through automation, digitalization, and increased global demand. Industries need professionals in production, quality, supply chain, and plant operations. As smart factories rise, hiring is focused on multi-skilled engineers and managers who can blend traditional manufacturing knowledge with modern industrial technologies.",
     },
     {
       icon: Car,
       title: "EV & Automobile",
       description:
-        "The EV and automobile sector is undergoing a major shift toward clean mobility, smart technologies, and localized manufacturing.",
+        "The EV and automobile sector is undergoing a major shift toward clean mobility, smart technologies, and localized manufacturing. Rapid innovation in battery tech, charging infrastructure, and connected vehicles is driving demand for R&D engineers, design experts, embedded software developers, and EV supply chain specialists—creating intense competition for next-gen automotive talent.",
     },
     {
       icon: Package,
       title: "FMCG, Food Processing & Agri Business",
       description:
-        "The FMCG, food processing, and agri business sectors are experiencing strong growth driven by rising consumer demand, rural market expansion.",
+        "The FMCG, food processing, and agri business sectors are experiencing strong growth driven by rising consumer demand, rural market expansion, and innovation in packaging, supply chain, and product development. Government support and increasing focus on sustainability, food safety, and automation are transforming the industry landscape. Talent demand is rising for professionals in sales, brand management, procurement, quality assurance, production, and agritech. Companies are seeking agile, tech-savvy individuals who understand consumer behavior, operational efficiency, and end-to-end value chains—making strategic hiring a key enabler for market leadership and scalability.",
     },
     {
       icon: Shield,
       title: "Defence & Aerospace",
       description:
-        "India's Defence and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation.",
+        "India’s Defense and Aerospace sector is witnessing a surge in growth fueled by government push for indigenization, private sector participation, and global partnerships. The industry demands highly specialized talent in design, systems integration, avionics, R&D, quality assurance, and program management. With increasing investments in advanced technologies like UAVs, space systems, and defense manufacturing, hiring is focused on engineers, scientists, and technocrats with niche skills and security clearance—making talent acquisition mission-critical for both strategic and operational success.",
     },
     {
       icon: Building,
       title: "Construction, Infrastructure & PMC",
       description:
-        "The construction and infrastructure sector is a key pillar of economic growth, driven by large-scale urbanization, smart cities.",
+        "The construction and infrastructure sector is a key pillar of economic growth, driven by large-scale urbanization, smart cities, and government-backed mega projects. With rising investments in roads, metros, airports, and industrial corridors, the demand for experienced professionals in project planning, civil engineering, contract management, and site execution has surged. Project Management Consultancies (PMC) are playing a vital role in ensuring timely, cost-effective, and quality-driven delivery. As technology integration and sustainability become priorities, the industry seeks agile leaders, certified project managers, and multidisciplinary teams capable of managing complex, high-value infrastructure developments across geographies.",
     },
     {
       icon: Factory,
       title: "Steel, Metal & Mining",
       description:
-        "The Steel, Metal, and Mining sector remains the backbone of industrial growth, with renewed momentum driven by infrastructure expansion.",
+        "The Steel, Metal, and Mining sector remains the backbone of industrial growth, with renewed momentum driven by infrastructure expansion, domestic manufacturing, and global demand. Modernization, sustainability goals, and digital adoption are transforming traditional operations across mining, smelting, and processing units. There's a sharp rise in demand for professionals in metallurgy, mining operations, safety, process engineering, and maintenance. As ESG compliance and automation reshape industry practices, companies are seeking future-ready talent that blends core domain expertise with innovation and operational excellence—making talent strategy a key differentiator in this resource-intensive sector.",
     },
     {
       icon: Pill,
       title: "Pharma & Healthcare",
       description:
-        "India's Pharma and Healthcare sector is growing rapidly with advancements in R&D, biotechnology, digital health.",
+        "India’s Pharma and Healthcare sector is growing rapidly with advancements in R&D, biotechnology, digital health, and global demand for generics. Regulatory changes, innovation in drug development, and healthcare delivery models are reshaping talent needs. The industry seeks skilled professionals in clinical research, regulatory affairs, quality control, digital health, and hospital administration—driving a competitive landscape for specialized, compliant, and innovation-focused talent.",
     },
     {
       icon: Monitor,
       title: "Consumer Services & Electronic Manufacturing",
       description:
-        "The rise of digital lifestyles, smart devices, and tech-enabled services is fueling rapid growth in consumer services and electronic manufacturing.",
+        "The rise of digital lifestyles, smart devices, and tech-enabled services is fueling rapid growth in consumer services and electronic manufacturing. Government initiatives like PLI schemes and “Digital India” are accelerating investments in local production and service delivery. Talent demand spans roles in product engineering, after-sales service, quality assurance, and customer experience. Companies are seeking agile professionals with a mix of technical expertise, customer-centric thinking, and operational agility to stay competitive in this fast-evolving space.",
     },
   ];
 
