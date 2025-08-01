@@ -330,7 +330,7 @@ const Index = () => {
 
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto space-y-24">
+          <div className="space-y-24">
             {/* About Section */}
             <div className="text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
@@ -339,7 +339,7 @@ const Index = () => {
                   Zillions Connect
                 </span>
               </h2>
-              <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
+              <div className="text-muted-foreground text-base lg:text-lg mx-auto leading-relaxed space-y-5">
                 <p>
                   We are among the fastest-growing HR and talent acquisition firms, dedicated to building long-term, strategic partnerships with our clients. By delivering agile, scalable, and result-driven workforce solutions, we enable businesses to stay focused on their core operations while we take care of their evolving human capital needs
                 </p>
@@ -363,7 +363,7 @@ const Index = () => {
                   Mission
                 </span>
               </h2>
-              <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
+              <div className="text-muted-foreground text-base lg:text-lg mx-auto leading-relaxed space-y-5">
                 <p style={{ fontWeight: 'bold' }}>
                   Every single day, we at Zillions Connect are Motivated &  Inspired to give differentiation to our Partners by:
 
