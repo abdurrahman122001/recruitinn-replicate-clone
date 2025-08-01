@@ -341,28 +341,16 @@ const Index = () => {
               </h2>
               <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
                 <p>
-                  We are among the fastest-growing HR and talent acquisition
-                  firms, dedicated to long-term, strategic partnerships with our
-                  clients. We deliver agile, scalable, and result-driven
-                  workforce solutions— helping businesses stay focused on their
-                  core goals.
+                  We are among the fastest-growing HR and talent acquisition firms, dedicated to building long-term, strategic partnerships with our clients. By delivering agile, scalable, and result-driven workforce solutions, we enable businesses to stay focused on their core operations while we take care of their evolving human capital needs
                 </p>
                 <p>
-                  Zillions Connect empowers organizations through customized
-                  recruitment and HR services. Our client-centric approach
-                  ensures cost-effective, high-quality solutions aligned with
-                  long-term business objectives.
+                  Backed by strong industry expertise and a robust delivery framework, Zillions Connect empowers organizations through customized recruitment and HR services. Our client-centric approach ensures cost-effective solutions without compromising on quality, aligning seamlessly with our clients' long-term business goals.
                 </p>
                 <p>
-                  What sets us apart? A unique hybrid model—combining the
-                  strategic depth of management consulting with the
-                  responsiveness of staffing. This helps us deliver flexible
-                  solutions across Recruitment and Managed HR Services.
+                  What sets us apart is our unique hybrid model—merging the strategic depth of management consulting with the efficiency and responsiveness of traditional staffing. This “converged” approach helps us offer dynamic and flexible solutions across both Recruitment and Managed HR Services, ensuring business continuity and growth across market cycles.
                 </p>
                 <p>
-                  At Zillions Connect, we don’t just fill roles—we build
-                  futures. Through integrated talent strategies, we help clients
-                  identify and develop future-ready leaders for lasting impact.
+                  At Zillions Connect, we don’t just fill roles—we build futures. Our integrated talent strategy spans recruitment, assessment, and development, helping organizations nurture future-ready leaders and achieve high performance. Our clients return to us time and again because we deliver measurable impact, exceptional talent, and lasting value.
                 </p>
               </div>
             </div>
@@ -376,16 +364,19 @@ const Index = () => {
                 </span>
               </h2>
               <div className="text-muted-foreground text-base lg:text-lg max-w-5xl mx-auto leading-relaxed space-y-5">
-                <p>
-                  Backed by strong industry expertise and a robust delivery
-                  framework, Zillions Connect empowers organizations through
-                  customized recruitment and HR services. We ensure
-                  cost-effective solutions without compromise.
+                <p style={{ fontWeight: 'bold' }}>
+                  Every single day, we at Zillions Connect are Motivated &  Inspired to give differentiation to our Partners by:
+
                 </p>
                 <p>
-                  Our hybrid model merges consulting-level strategy with rapid,
-                  scalable staffing, enabling us to deliver meaningful business
-                  outcomes—not just headcount.
+                  Providing right personnel's with right attitude and right skills at the right time so as to fuel their business growth.
+                </p>
+                <p>
+                  Galvanize employees by enriching them with various development initiatives that help them improve their skills and exceed business goals by creating higher sense of belonging and achievement.
+                </p>
+                <p>
+                  Provide strategic HR initiatives which would act as catalyst to accelerate their business.
+
                 </p>
               </div>
             </div>
