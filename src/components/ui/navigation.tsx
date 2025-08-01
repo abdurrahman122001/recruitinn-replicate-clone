@@ -20,9 +20,12 @@ export function Navigation() {
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <img className="w-48 h-32" src={logo} alt="Logo" />
+            <img
+              className="w-32 h-20 md:w-48 md:h-32"
+              src={logo}
+              alt="Logo"
+            />
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
