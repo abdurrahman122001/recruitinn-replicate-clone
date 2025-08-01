@@ -278,7 +278,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center text-white">
+        <div className="relative z-10 container mx-auto text-center text-white">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Find Top Talent with{" "}
@@ -308,7 +308,7 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="py-12 lg:py-16 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div
@@ -329,7 +329,7 @@ const Index = () => {
       </section>
 
       <section id="about" className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto space-y-24">
             {/* About Section */}
             <div className="text-center space-y-6">
@@ -415,7 +415,7 @@ const Index = () => {
       </section>
 
       <section className="py-12 sm:py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               How{" "}
@@ -474,7 +474,7 @@ const Index = () => {
         </div>
       </section>
       <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
@@ -556,7 +556,7 @@ const Index = () => {
       </section>
       {/* Services Section */}
       <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             {/* Services Menu Navigation */}
             <div className="flex justify-center mb-12 lg:mb-16">
@@ -631,7 +631,7 @@ const Index = () => {
 
       {/* Process Section - 5 Columns */}
       <section id="process" className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -748,7 +748,7 @@ const Index = () => {
         id="industry-excellence"
         className="py-16 lg:py-20 bg-secondary/30"
       >
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -788,7 +788,7 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">

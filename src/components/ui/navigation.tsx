@@ -17,7 +17,7 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img className="w-24 h-28" src={logo} alt="Logo" />

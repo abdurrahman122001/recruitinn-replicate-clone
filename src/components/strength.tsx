@@ -12,7 +12,7 @@ export default function Strengths() {
 
   return (
     <section className="py-16 lg:py-24 bg-[var(--background)] dark:bg-[var(--gradient-primary)] relative">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--primary)] dark:text-white mb-4 drop-shadow-md">
             Our Strengths
