@@ -38,7 +38,7 @@ import {
 } from "lucide-react";
 import bg1 from "/bg-2.png";
 import bg2 from "/bg-1.png";
-import mainBg from "/main-bg.jpg";
+import indianProfessionalsBg from "/indian-professionals-bg.jpg";
 const Index = () => {
   const stats = [
     { number: "2021", label: "Active Since" },
@@ -272,14 +272,14 @@ const Index = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${mainBg})`,
+            backgroundImage: `url(${indianProfessionalsBg})`,
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="relative z-10 container mx-auto text-center text-white">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Find Top Talent with{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -287,7 +287,7 @@ const Index = () => {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
+            <p className="text-lg sm:text-xl mb-8 mx-auto animate-fade-in [animation-delay:200ms]">
               We are among the fastest-growing HR and talent acquisition firms,
               dedicated to building long-term, strategic partnerships with our
               clients.
@@ -309,7 +309,7 @@ const Index = () => {
       {/* Stats Section */}
       <section className="py-12 lg:py-16 border-b border-border">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center mx-auto">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -389,7 +389,7 @@ const Index = () => {
                   Values
                 </span>
               </h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-2">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-2">
                 {values.map((value, index) => (
                   <div
                     key={index}
@@ -415,7 +415,7 @@ const Index = () => {
       </section>
 
       <section className="py-12 sm:py-16 bg-white">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               How{" "}
@@ -474,7 +474,7 @@ const Index = () => {
         </div>
       </section>
       <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
@@ -557,7 +557,7 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto">
             {/* Services Menu Navigation */}
             <div className="flex justify-center mb-12 lg:mb-16">
               <div className="bg-card rounded-2xl p-2 shadow-card">
@@ -587,7 +587,7 @@ const Index = () => {
                   Services
                 </span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
                 Tailored HR solutions to empower your organization.
               </p>
             </div>
@@ -632,7 +632,7 @@ const Index = () => {
       {/* Process Section - 5 Columns */}
       <section id="process" className="py-16 lg:py-20">
         <div className="container mx-auto">
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Recruitment{" "}
@@ -640,7 +640,7 @@ const Index = () => {
                   Process
                 </span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
                 At Zillions Connect, our recruitment process is built on
                 precision, speed, and strategic alignment. We combine deep
                 industry knowledge with a structured approach to deliver the
@@ -749,7 +749,7 @@ const Index = () => {
         className="py-16 lg:py-20 bg-secondary/30"
       >
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Industry{" "}
@@ -757,7 +757,7 @@ const Index = () => {
                   Excellence
                 </span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
                 Deep expertise across diverse industries with specialized talent
                 solutions.
               </p>
@@ -789,7 +789,7 @@ const Index = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="py-16 lg:py-20">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 What Our{" "}
@@ -797,7 +797,7 @@ const Index = () => {
                   Clients Say
                 </span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
                 Success stories from companies who trust Zillions Connect for
                 their talent needs.
               </p>
