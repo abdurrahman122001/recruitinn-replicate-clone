@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "./button";
 import { ChevronDown, Menu, X, Globe } from "lucide-react";
 import {
@@ -8,12 +8,46 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu";
-import logo from "../../../public/Zillion-Connect--Final.png"
+import logo from "../../../public/Zillion-Connect--Final.png";
+
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleSectionClick = (sectionId: string) => {
+    setIsMenuOpen(false);
+    
+    if (location.pathname === '/') {
+      // If we're already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page first, then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to allow page navigation to complete
+    }
+  };
+
+  const renderSectionLink = (sectionId: string, text: string) => {
+    return (
+      <button
+        onClick={() => handleSectionClick(sectionId)}
+        className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+      >
+        {text}
+      </button>
+    );
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -26,82 +60,19 @@ export function Navigation() {
               alt="Logo"
             />
           </Link>
+          
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
-              href="#about"
-              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname === '/') {
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#about';
-                }
-              }}
-            >
-              About Us
-            </a>
-            <a
-              href="#services"
-              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname === '/') {
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#services';
-                }
-              }}
-            >
-              Services
-            </a>
-            <a
-              href="#process"
-              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname === '/') {
-                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#process';
-                }
-              }}
-            >
-              Process
-            </a>
-            <a
-              href="#industry-excellence"
-              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname === '/') {
-                  document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#industry-excellence';
-                }
-              }}
-            >
-              Industry Excellence
-            </a>
-            <a
-              href="#testimonials"
-              className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname === '/') {
-                  document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#testimonials';
-                }
-              }}
-            >
-              Testimonials
-            </a>
+            {renderSectionLink('about', 'About Us')}
+            {renderSectionLink('services', 'Services')}
+            {renderSectionLink('process', 'Process')}
+            {renderSectionLink('industry-excellence', 'Industry Excellence')}
+            {renderSectionLink('testimonials', 'Testimonials')}
             <Link
               to="/contact"
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contact") ? "text-primary" : "text-muted-foreground"
-                }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/contact") ? "text-primary" : "text-muted-foreground"
+              }`}
             >
               Contact
             </Link>
@@ -112,36 +83,6 @@ export function Navigation() {
             <Button variant="outline" size="sm" asChild>
               <Link to="/application-form">Apply As Candidate</Link>
             </Button>
-
-            {/* <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="space-x-1">
-                  <span>Login</span>
-                  <ChevronDown className="w-4 h-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem asChild>
-                  <Link to="/client-login">Hire Talent</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/candidate-login">Apply As Engineer</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu> */}
-
-            {/* <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="space-x-1">
-                  <Globe className="w-4 h-4" />
-                  <span>English</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>English</DropdownMenuItem>
-                <DropdownMenuItem>Arabic</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -159,81 +100,36 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
-              <a
-                href="#about"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  if (location.pathname === '/') {
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#about';
-                  }
-                }}
+              <button
+                onClick={() => handleSectionClick('about')}
+                className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
                 About Us
-              </a>
-              <a
-                href="#services"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  if (location.pathname === '/') {
-                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#services';
-                  }
-                }}
+              </button>
+              <button
+                onClick={() => handleSectionClick('services')}
+                className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
                 Services
-              </a>
-              <a
-                href="#process"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  if (location.pathname === '/') {
-                    document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#process';
-                  }
-                }}
+              </button>
+              <button
+                onClick={() => handleSectionClick('process')}
+                className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
                 Process
-              </a>
-              <a
-                href="#industry-excellence"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  if (location.pathname === '/') {
-                    document.getElementById('industry-excellence')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#industry-excellence';
-                  }
-                }}
+              </button>
+              <button
+                onClick={() => handleSectionClick('industry-excellence')}
+                className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
                 Industry Excellence
-              </a>
-              <a
-                href="#testimonials"
-                className="text-sm font-medium text-muted-foreground hover:text-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  if (location.pathname === '/') {
-                    document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#testimonials';
-                  }
-                }}
+              </button>
+              <button
+                onClick={() => handleSectionClick('testimonials')}
+                className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
                 Testimonials
-              </a>
+              </button>
               <Link
                 to="/contact"
                 className="text-sm font-medium text-muted-foreground hover:text-primary"
