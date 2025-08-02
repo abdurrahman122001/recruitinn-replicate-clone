@@ -55,15 +55,63 @@ const Index = () => {
   ];
   const [activeTab, setActiveTab] = useState("All");
   const [api, setApi] = useState<any>();
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     if (!api) return;
 
-    const autoPlay = setInterval(() => {
-      api.scrollNext();
-    }, 5000);
+    let autoPlayInterval: NodeJS.Timeout;
+    
+    // Only auto-play when not scrolling
+    if (!isScrolling) {
+      autoPlayInterval = setInterval(() => {
+        api.scrollNext();
+      }, 5000);
+    }
 
-    return () => clearInterval(autoPlay);
+    return () => {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+      }
+    };
+  }, [api, isScrolling]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      setIsScrolling(true);
+
+      // Clear existing timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Move slide based on scroll direction
+      if (e.deltaY > 0) {
+        api.scrollNext();
+      } else {
+        api.scrollPrev();
+      }
+
+      // Reset scrolling state after a delay
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    };
+
+    // Add wheel event listener to the document
+    document.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      document.removeEventListener('wheel', handleWheel);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
   }, [api]);
 
   const values = [
@@ -281,14 +329,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Carousel setApi={setApi} className="w-full" opts={{ align: "start", loop: true }}>
-        <CarouselContent className="-ml-0">
+    <div className="h-screen overflow-hidden bg-background">
+      <Carousel setApi={setApi} className="w-full h-full" opts={{ align: "start", loop: true }}>
+        <CarouselContent className="-ml-0 h-full">
           {/* Hero Section */}
-          <CarouselItem className="pl-0">
+          <CarouselItem className="pl-0 h-full">
             <section
               id="home"
-              className="relative min-h-screen flex items-center justify-center overflow-hidden w-full"
+              className="relative h-full flex items-center justify-center overflow-hidden w-full"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -351,8 +399,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* About Section */}
-          <CarouselItem className="pl-0">
-            <section id="about" className="min-h-screen py-20 bg-background flex items-center">
+          <CarouselItem className="pl-0 h-full">
+            <section id="about" className="h-full py-20 bg-background flex items-center overflow-y-auto">
               <div className="container mx-auto">
                 <div className="space-y-24">
             {/* About Section */}
@@ -496,8 +544,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* Services Section */}
-          <CarouselItem className="pl-0">
-            <section className="min-h-screen py-16 lg:py-20 bg-background flex items-center" id="services">
+          <CarouselItem className="pl-0 h-full">
+            <section className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto" id="services">
               <div className="container mx-auto w-full">
                 <div className="mx-auto">
                   {/* Services Menu Navigation */}
@@ -573,8 +621,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* Excellence Section */}
-          <CarouselItem className="pl-0">
-            <section className="min-h-screen py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center">
+          <CarouselItem className="pl-0 h-full">
+            <section className="h-full py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center overflow-y-auto">
               <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
@@ -658,8 +706,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* Process Section */}
-          <CarouselItem className="pl-0">
-            <section id="process" className="min-h-screen py-16 lg:py-20 bg-background flex items-center">
+          <CarouselItem className="pl-0 h-full">
+            <section id="process" className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto">
               <div className="container mx-auto">
                 <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
@@ -774,10 +822,10 @@ const Index = () => {
           </CarouselItem>
 
           {/* Industry Excellence Section */}
-          <CarouselItem className="pl-0">
+          <CarouselItem className="pl-0 h-full">
             <section
               id="industry-excellence"
-              className="min-h-screen py-16 lg:py-20 bg-secondary/30 flex items-center"
+              className="h-full py-16 lg:py-20 bg-secondary/30 flex items-center overflow-y-auto"
             >
               <div className="container mx-auto">
                 <div className="mx-auto">
@@ -819,8 +867,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* Testimonials Section */}
-          <CarouselItem className="pl-0">
-            <section id="testimonials" className="min-h-screen py-16 lg:py-20 bg-background flex items-center">
+          <CarouselItem className="pl-0 h-full">
+            <section id="testimonials" className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto">
               <div className="container mx-auto">
                 <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
@@ -876,8 +924,8 @@ const Index = () => {
           </CarouselItem>
 
           {/* CTA Section */}
-          <CarouselItem className="pl-0">
-            <div className="min-h-screen flex flex-col justify-center">
+          <CarouselItem className="pl-0 h-full">
+            <div className="h-full flex flex-col justify-center overflow-y-auto">
               <CTA />
               <Footer />
             </div>
