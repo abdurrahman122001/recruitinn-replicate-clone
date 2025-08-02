@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Award,
@@ -26,13 +26,6 @@ import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
   ArrowRight,
   Sparkles,
   Target,
@@ -54,65 +47,6 @@ const Index = () => {
     { number: "10+", label: "Global Reach - Countries" },
   ];
   const [activeTab, setActiveTab] = useState("All");
-  const [api, setApi] = useState<any>();
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  useEffect(() => {
-    if (!api) return;
-
-    let autoPlayInterval: NodeJS.Timeout;
-    
-    // Only auto-play when not scrolling
-    if (!isScrolling) {
-      autoPlayInterval = setInterval(() => {
-        api.scrollNext();
-      }, 5000);
-    }
-
-    return () => {
-      if (autoPlayInterval) {
-        clearInterval(autoPlayInterval);
-      }
-    };
-  }, [api, isScrolling]);
-
-  useEffect(() => {
-    if (!api) return;
-
-    let scrollTimeout: NodeJS.Timeout;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      setIsScrolling(true);
-
-      // Clear existing timeout
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-
-      // Move slide based on scroll direction
-      if (e.deltaY > 0) {
-        api.scrollNext();
-      } else {
-        api.scrollPrev();
-      }
-
-      // Reset scrolling state after a delay
-      scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 1000);
-    };
-
-    // Add wheel event listener to the document
-    document.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      document.removeEventListener('wheel', handleWheel);
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-    };
-  }, [api]);
 
   const values = [
     {
@@ -329,80 +263,74 @@ const Index = () => {
   ];
 
   return (
-    <div className="h-screen overflow-hidden bg-background">
-      <Carousel setApi={setApi} className="w-full h-full" opts={{ align: "start", loop: true }}>
-        <CarouselContent className="-ml-0 h-full">
-          {/* Hero Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section
-              id="home"
-              className="relative h-full flex items-center justify-center overflow-hidden w-full"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: `url(${indianProfessionalsBg})`,
-                }}
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${indianProfessionalsBg})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/30"></div> {/* Changed from bg-black/40 to bg-black/30 */}
+        </div>
+
+        <div className="relative z-10 container mx-auto text-center text-white">
+          <div className="mx-auto">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
+              Find Top Talent with{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Zillions Connect
+              </span>
+            </h1>
+
+            <p className="text-lg sm:text-xl mb-8 mx-auto animate-fade-in [animation-delay:200ms]">
+              We are among the fastest-growing HR and talent acquisition firms,
+              dedicated to building long-term, strategic partnerships with our
+              clients.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
+              <Button
+                size="lg"
+                className="bg-gradient-primary hover:opacity-90"
+                asChild
               >
-                <div className="absolute inset-0 bg-black/30"></div>
-              </div>
+                <Link to="/application-form">Apply As Candidate</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="relative z-10 container mx-auto text-center text-white">
-                <div className="mx-auto">
-                  <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
-                    Find Top Talent with{" "}
-                    <span className="bg-gradient-primary bg-clip-text text-transparent">
-                      Zillions Connect
-                    </span>
-                  </h1>
-
-                  <p className="text-lg sm:text-xl mb-8 mx-auto animate-fade-in [animation-delay:200ms]">
-                    We are among the fastest-growing HR and talent acquisition firms,
-                    dedicated to building long-term, strategic partnerships with our
-                    clients.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
-                    <Button
-                      size="lg"
-                      className="bg-gradient-primary hover:opacity-90"
-                      asChild
-                    >
-                      <Link to="/application-form">Apply As Candidate</Link>
-                    </Button>
-                  </div>
+      {/* Stats Section */}
+      <section className="py-12 lg:py-16 border-b border-border">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center mx-auto">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="space-y-2 animate-scale-in hover-scale"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
+                  {stat.number}
+                </div>
+                <div className="text-sm sm:text-base text-muted-foreground">
+                  {stat.label}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Stats Section */}
-              <div className="absolute bottom-0 left-0 right-0 py-12 lg:py-16 border-t border-white/20 bg-black/10 backdrop-blur-sm">
-                <div className="container mx-auto">
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center mx-auto">
-                    {stats.map((stat, index) => (
-                      <div
-                        key={index}
-                        className="space-y-2 animate-scale-in hover-scale text-white"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-                          {stat.number}
-                        </div>
-                        <div className="text-sm sm:text-base text-white/80">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          </CarouselItem>
-
-          {/* About Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section id="about" className="h-full py-20 bg-background flex items-center overflow-y-auto">
-              <div className="container mx-auto">
-                <div className="space-y-24">
+      <section id="about" className="py-20 bg-background">
+        <div className="container mx-auto">
+          <div className="space-y-24">
             {/* About Section */}
             <div className="text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
@@ -540,91 +468,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-            </section>
-          </CarouselItem>
-
-          {/* Services Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto" id="services">
-              <div className="container mx-auto w-full">
-                <div className="mx-auto">
-                  {/* Services Menu Navigation */}
-                  <div className="flex justify-center mb-12 lg:mb-16">
-                    <div className="bg-card rounded-2xl p-2 shadow-card">
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {tabs.map((tab) => (
-                          <Button
-                            key={tab}
-                            variant={activeTab === tab ? "default" : "ghost"}
-                            className={
-                              activeTab === tab
-                                ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                            }
-                            onClick={() => setActiveTab(tab)}
-                          >
-                            {tab}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-12 lg:mb-16">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                      Our{" "}
-                      <span className="bg-gradient-primary bg-clip-text text-transparent">
-                        Services
-                      </span>
-                    </h2>
-                    <p className="text-base lg:text-lg text-muted-foreground mx-auto">
-                      Tailored HR solutions to empower your organization.
-                    </p>
-                  </div>
-
-                  <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                    {filteredServices.map((service, index) => (
-                      <div
-                        key={index}
-                        className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
-                        style={{ animationDelay: `${index * 200}ms` }}
-                      >
-                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
-                          <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                        </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
-                          {service.title}
-                        </h3>
-                        {/* Description rendered as paragraphs */}
-                        <div>
-                          {Array.isArray(service.description) ? (
-                            service.description.map((para, idx) => (
-                              <p
-                                key={idx}
-                                className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0"
-                              >
-                                {para}
-                              </p>
-                            ))
-                          ) : (
-                            <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                              {service.description}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          </CarouselItem>
-
-          {/* Excellence Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section className="h-full py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center overflow-y-auto">
-              <div className="container mx-auto">
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      </section>
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
                 src={bg2}
@@ -700,16 +547,88 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Services Section */}
+      <section className="py-16 lg:py-20" id="services">
+        <div className="container mx-auto">
+          <div className="mx-auto">
+            {/* Services Menu Navigation */}
+            <div className="flex justify-center mb-12 lg:mb-16">
+              <div className="bg-card rounded-2xl p-2 shadow-card">
+                <div className="flex flex-wrap justify-center gap-2">
+                  {tabs.map((tab) => (
+                    <Button
+                      key={tab}
+                      variant={activeTab === tab ? "default" : "ghost"}
+                      className={
+                        activeTab === tab
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }
+                      onClick={() => setActiveTab(tab)}
+                    >
+                      {tab}
+                    </Button>
+                  ))}
                 </div>
               </div>
-            </section>
-          </CarouselItem>
+            </div>
 
-          {/* Process Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section id="process" className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto">
-              <div className="container mx-auto">
-                <div className="mx-auto">
+            <div className="text-center mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Our{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Services
+                </span>
+              </h2>
+              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
+                Tailored HR solutions to empower your organization.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              {filteredServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
+                    <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
+                    {service.title}
+                  </h3>
+                  {/* Description rendered as paragraphs */}
+                  <div>
+                    {Array.isArray(service.description) ? (
+                      service.description.map((para, idx) => (
+                        <p
+                          key={idx}
+                          className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0"
+                        >
+                          {para}
+                        </p>
+                      ))
+                    ) : (
+                      <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section - 5 Columns */}
+      <section id="process" className="py-16 lg:py-20">
+        <div className="container mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Recruitment{" "}
@@ -814,21 +733,19 @@ const Index = () => {
                 <p className="text-muted-foreground text-sm">
                   Significant savings on recruitment expenses
                 </p>
+              </div>
             </div>
           </div>
         </div>
-              </div>
-            </section>
-          </CarouselItem>
+      </section>
 
-          {/* Industry Excellence Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section
-              id="industry-excellence"
-              className="h-full py-16 lg:py-20 bg-secondary/30 flex items-center overflow-y-auto"
-            >
-              <div className="container mx-auto">
-                <div className="mx-auto">
+      {/* Industry Excellence Section */}
+      <section
+        id="industry-excellence"
+        className="py-16 lg:py-20 bg-secondary/30"
+      >
+        <div className="container mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Industry{" "}
@@ -863,14 +780,12 @@ const Index = () => {
             </div>
           </div>
         </div>
-            </section>
-          </CarouselItem>
+      </section>
 
-          {/* Testimonials Section */}
-          <CarouselItem className="pl-0 h-full">
-            <section id="testimonials" className="h-full py-16 lg:py-20 bg-background flex items-center overflow-y-auto">
-              <div className="container mx-auto">
-                <div className="mx-auto">
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 lg:py-20">
+        <div className="container mx-auto">
+          <div className="mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 What Our{" "}
@@ -920,21 +835,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-            </section>
-          </CarouselItem>
+      </section>
 
-          {/* CTA Section */}
-          <CarouselItem className="pl-0 h-full">
-            <div className="h-full flex flex-col justify-center overflow-y-auto">
-              <CTA />
-              <Footer />
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        
-        <CarouselPrevious className="left-4 z-50" />
-        <CarouselNext className="right-4 z-50" />
-      </Carousel>
+      <CTA />
+      <Footer />
     </div>
   );
 };
