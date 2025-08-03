@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Award,
@@ -21,6 +21,8 @@ import {
   Building2,
   Pill,
   Monitor,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
@@ -39,6 +41,7 @@ import {
 import bg1 from "/bg-2.png";
 import bg2 from "/bg-1.png";
 import indianProfessionalsBg from "/bg-image.jpg";
+
 const Index = () => {
   const stats = [
     { number: "2021", label: "Active Since" },
@@ -46,7 +49,8 @@ const Index = () => {
     { number: "500+", label: "Talent Engaged" },
     { number: "10+", label: "Global Reach - Countries" },
   ];
-  const [activeTab, setActiveTab] = useState("All");
+
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const values = [
     {
@@ -92,6 +96,7 @@ const Index = () => {
         "Our strength begins with our people—experienced, passionate professionals who drive our commitment to delivering innovative talent solutions. At Zillions Connect, our team brings a rare blend of industry insight, business acumen, and recruitment expertise. With deep understanding of client cultures and role requirements, they don’t just assess resumes—they identify real potential and future performance.",
     },
   ];
+
   const services = [
     {
       category: "Executive Search",
@@ -148,19 +153,6 @@ const Index = () => {
     },
   ];
 
-  const filteredServices =
-    activeTab === "All"
-      ? services
-      : services.filter((service) => service.category === activeTab);
-
-  const tabs = [
-    "All",
-    "Executive Search",
-    "International Hiring",
-    "Permanent Recruitment",
-    "Staffing Solutions",
-    "RPO Services",
-  ];
   const processSteps = [
     {
       number: "01",
@@ -262,6 +254,26 @@ const Index = () => {
     },
   ];
 
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? services.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === services.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -275,7 +287,7 @@ const Index = () => {
             backgroundImage: `url(${indianProfessionalsBg})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/30"></div> {/* Changed from bg-black/40 to bg-black/30 */}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
         <div className="relative z-10 container mx-auto text-center text-white">
@@ -469,6 +481,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -550,34 +563,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Services Section */}
       <section className="py-16 lg:py-20" id="services">
         <div className="container mx-auto">
           <div className="mx-auto">
-            {/* Services Menu Navigation */}
-            <div className="flex justify-center mb-12 lg:mb-16">
-              <div className="bg-card rounded-2xl p-2 shadow-card">
-                <div className="flex flex-wrap justify-center gap-2">
-                  {tabs.map((tab) => (
-                    <Button
-                      key={tab}
-                      variant={activeTab === tab ? "default" : "ghost"}
-                      className={
-                        activeTab === tab
-                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      }
-                      onClick={() => setActiveTab(tab)}
-                    >
-                      {tab}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
                 Our{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Services
@@ -588,43 +580,80 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-              {filteredServices.map((service, index) => (
+            {/* Enhanced Slider */}
+            <div className="relative">
+              <div className="overflow-hidden px-16">
                 <div
-                  key={index}
-                  className="bg-card p-6 lg:p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 group animate-scale-in hover-scale"
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  className="flex transition-all duration-700 ease-in-out"
+                  style={{
+                    transform: `translateX(-${currentSlide * 100}%)`,
+                  }}
                 >
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-card-foreground mb-3 lg:mb-4">
-                    {service.title}
-                  </h3>
-                  {/* Description rendered as paragraphs */}
-                  <div>
-                    {Array.isArray(service.description) ? (
-                      service.description.map((para, idx) => (
-                        <p
-                          key={idx}
-                          className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0"
-                        >
-                          {para}
-                        </p>
-                      ))
-                    ) : (
-                      <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                        {service.description}
-                      </p>
-                    )}
-                  </div>
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      className={`min-w-full bg-card p-8 lg:p-10 rounded-2xl shadow-2xl transition-all duration-700 ease-in-out border-2 border-transparent bg-gradient-to-r from-blue-50 to-indigo-50 ${currentSlide === index ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      style={{ animationDelay: `${index * 200}ms` }}
+                    >
+                      <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-6 lg:mb-8">
+                        <service.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl lg:text-2xl font-bold text-card-foreground mb-4 lg:mb-6">
+                        {service.title}
+                      </h3>
+                      <div>
+                        {Array.isArray(service.description) ? (
+                          service.description.map((para, idx) => (
+                            <p
+                              key={idx}
+                              className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0"
+                            >
+                              {para}
+                            </p>
+                          ))
+                        ) : (
+                          <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                            {service.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={handlePrevSlide}
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-1 rounded-full shadow-lg transition-all duration-300"
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </button>
+              <button
+                onClick={handleNextSlide}
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-1 rounded-full shadow-lg transition-all duration-300"
+              >
+                <ChevronRight className="w-8 h-8" />
+              </button>
+
+              {/* Progress Dots */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                        ? 'bg-blue-600 scale-125'
+                        : 'bg-gray-300 hover:bg-blue-400'
+                      }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Process Section - 5 Columns */}
       <section id="process" className="py-16 lg:py-20">
         <div className="container mx-auto">
@@ -645,7 +674,6 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative">
-              {/* Connecting Line for larger screens */}
               <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"></div>
 
               {processSteps.map((step, index) => (
@@ -655,19 +683,16 @@ const Index = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="bg-card rounded-2xl p-4 lg:p-6 shadow-card hover:shadow-elegant transition-all duration-500 group-hover:-translate-y-2 border border-border">
-                    {/* Step Number */}
                     <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                       <span className="text-white font-bold text-sm lg:text-lg">
                         {step.number}
                       </span>
                     </div>
 
-                    {/* Icon */}
                     <div className="w-10 h-10 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
-                      <step.icon className="w-5 h-5 lg:w-7 lg:h-7 text-blue-600" />
+                      <step.icon className="w-5 h-5 lg:w-7 h-7 text-blue-600" />
                     </div>
 
-                    {/* Content */}
                     <h3 className="text-sm lg:text-lg font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors">
                       {step.title}
                     </h3>
@@ -676,7 +701,6 @@ const Index = () => {
                     </p>
                   </div>
 
-                  {/* Connecting Arrow */}
                   {index < processSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-20 -right-3 z-20">
                       <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md border border-blue-100">
@@ -688,7 +712,6 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Process Benefits */}
             <div className="grid md:grid-cols-3 gap-8 mt-16">
               <div className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 group text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
