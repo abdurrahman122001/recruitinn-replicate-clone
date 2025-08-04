@@ -27,6 +27,7 @@ import {
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
+import TestimonialsSection from "@/components/testimonials-section";
 import {
   ArrowRight,
   Sparkles,
@@ -805,60 +806,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 lg:py-20">
-        <div className="container mx-auto">
-          <div className="mx-auto">
-            <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                What Our{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Clients Say
-                </span>
-              </h2>
-              <p className="text-base lg:text-lg text-muted-foreground mx-auto">
-                Success stories from companies who trust Zillions Connect for
-                their talent needs.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((_, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">C</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-foreground">
-                        Client Company
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Industry Leader
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    "Zillions Connect transformed our hiring process. Their
-                    expertise in finding the right talent has been instrumental
-                    in our growth."
-                  </p>
-                  <div className="flex text-yellow-400">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <span key={star} className="text-lg">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       <CTA />
       <Footer />
