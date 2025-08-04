@@ -81,7 +81,7 @@ export function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="outline" size="sm" asChild>
-              <Link to="/application-form">Apply As Candidate</Link>
+              <Link to="/application-form">Apply as Candidate</Link>
             </Button>
           </div>
 

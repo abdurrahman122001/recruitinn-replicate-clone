@@ -282,15 +282,18 @@ const Index = () => {
         id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
+        {/* Background Image with Dark Overlay and Blur */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${indianProfessionalsBg})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/30"></div>
+          {/* Dark overlay with blur */}
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
         </div>
 
+        {/* Foreground Content */}
         <div className="relative z-10 container mx-auto text-center text-white">
           <div className="mx-auto">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -312,7 +315,7 @@ const Index = () => {
                 className="bg-gradient-primary hover:opacity-90"
                 asChild
               >
-                <Link to="/application-form">Apply As Candidate</Link>
+                <Link to="/application-form">Apply as Candidate</Link>
               </Button>
             </div>
           </div>
@@ -645,8 +648,8 @@ const Index = () => {
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                        ? 'bg-blue-600 scale-125'
-                        : 'bg-gray-300 hover:bg-blue-400'
+                      ? 'bg-blue-600 scale-125'
+                      : 'bg-gray-300 hover:bg-blue-400'
                       }`}
                   />
                 ))}

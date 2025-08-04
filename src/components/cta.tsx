@@ -16,7 +16,7 @@ export default function CTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/application-form"><Button size="lg" variant="outline" className="text-primary border-white hover:bg-white hover:text-primary">
-            Apply As Candidate
+            Apply as Candidate
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Button></Link>
         </div>
