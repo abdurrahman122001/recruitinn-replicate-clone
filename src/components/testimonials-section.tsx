@@ -36,7 +36,7 @@ const TeamSection = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Dedicated professionals working together to connect exceptional talent 
+            Dedicated professionals working together to connect exceptional talent
             with leading organizations across industries.
           </p>
         </div>
@@ -48,36 +48,28 @@ const TeamSection = () => {
               className="group relative bg-card/50 backdrop-blur-sm border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  {member.name}
+                </h3>
+
+                <div className="flex items-center justify-center mb-2">
+                  <Briefcase className="w-4 h-4 text-primary mr-2" />
+                  <span className="text-sm font-medium text-primary">
+                    {member.position}
+                  </span>
                 </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                {member.name}
-              </h3>
-              
-              <div className="flex items-center justify-center mb-2">
-                <Briefcase className="w-4 h-4 text-primary mr-2" />
-                <span className="text-sm font-medium text-primary">
-                  {member.position}
-                </span>
-              </div>
-              
-              <div className="flex items-center justify-center mb-4">
-                <MapPin className="w-4 h-4 text-muted-foreground mr-2" />
-                <span className="text-sm text-muted-foreground">
-                  {member.company}
-                </span>
-              </div>
+                <div className="flex items-center justify-center mb-4">
+                  <MapPin className="w-4 h-4 text-muted-foreground mr-2" />
+                  <span className="text-sm text-muted-foreground">
+                    {member.company}
+                  </span>
+                </div>
 
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {member.bio}
-              </p>
-            </div>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {member.bio}
+                </p>
+              </div>
             </div>
           ))}
         </div>
