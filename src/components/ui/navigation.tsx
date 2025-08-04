@@ -67,7 +67,7 @@ export function Navigation() {
             {renderSectionLink('services', 'Services')}
             {renderSectionLink('process', 'Process')}
             {renderSectionLink('industry-excellence', 'Industry Excellence')}
-            {renderSectionLink('team', 'Team')}
+            {renderSectionLink('testimonials', 'Testimonials')}
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -125,10 +125,10 @@ export function Navigation() {
                 Industry Excellence
               </button>
               <button
-                onClick={() => handleSectionClick('team')}
+                onClick={() => handleSectionClick('testimonials')}
                 className="text-sm font-medium text-muted-foreground hover:text-primary text-left"
               >
-                Team
+                Testimonials
               </button>
               <Link
                 to="/contact"
