@@ -27,7 +27,7 @@ import {
 import { Link } from "react-router-dom";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
-import TeamSection from "@/components/testimonials-section";
+import TestimonialsSection from "@/components/testimonials-section";
 import {
   ArrowRight,
   Sparkles,
@@ -806,7 +806,7 @@ const Index = () => {
         </div>
       </section>
 
-      <TeamSection />
+      <TestimonialsSection />
 
       <CTA />
       <Footer />
