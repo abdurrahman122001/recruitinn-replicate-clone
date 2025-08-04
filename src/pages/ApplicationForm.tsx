@@ -68,51 +68,66 @@ export default function ApplicationForm() {
       setFormData((prev) => ({ ...prev, resume: file }));
     }
   };
+const getCsrfToken = async () => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/sanctum/csrf-cookie', {
+      credentials: 'include',
+    });
+    const cookies = document.cookie.split(';');
+    const tokenCookie = cookies.find(cookie => cookie.trim().startsWith('XSRF-TOKEN='));
+    return tokenCookie ? decodeURIComponent(tokenCookie.split('=')[1]) : null;
+  } catch (error) {
+    console.error('Error getting CSRF token:', error);
+    return null;
+  }
+};
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("fullName", formData.fullName);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("phone", formData.phone);
-      formDataToSend.append("currentCompany", formData.currentCompany);
-      formDataToSend.append("position", formData.position);
-      formDataToSend.append("experience", formData.experience);
-      formDataToSend.append("message", formData.message);
-      if (formData.resume) {
-        formDataToSend.append("resume", formData.resume);
-      }
-
-      const response = await fetch("/api/send-application", {
-        method: "POST",
-        body: formDataToSend,
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to submit application");
-      }
-
-      setSubmitSuccess(true);
-      toast({
-        title: "Application Submitted!",
-        description: "Thank you for your application. We'll review it shortly.",
-      });
-    } catch (error) {
-      console.error("Error submitting application:", error);
-      toast({
-        title: "Submission Failed",
-        description: error instanceof Error ? error.message : "An error occurred",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+  try {
+    const formDataToSend = new FormData(); // Changed variable name to avoid conflict
+    formDataToSend.append("fullName", formData.fullName);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("currentCompany", formData.currentCompany);
+    formDataToSend.append("position", formData.position);
+    formDataToSend.append("experience", formData.experience);
+    formDataToSend.append("message", formData.message);
+    if (formData.resume) {
+      formDataToSend.append("resume", formData.resume);
     }
-  };
 
+    const response = await fetch("http://127.0.0.1:8000/api/send-application", {
+      method: "POST",
+      body: formDataToSend,
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.message || 'Request failed');
+    }
+
+    const data = await response.json();
+    setSubmitSuccess(true);
+    toast({
+      title: "Application Submitted!",
+      description: data.message,
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    toast({
+      title: "Submission Failed",
+      description: error instanceof Error ? error.message : "An error occurred",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const resetForm = () => {
     setFormData({
       fullName: "",
