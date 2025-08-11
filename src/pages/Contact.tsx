@@ -43,7 +43,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://darkred-baboon-508561.hostingersite.com/zillions-backend/api/contact", {
+      const response = await fetch("https://test.brannovate.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
