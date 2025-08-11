@@ -70,7 +70,7 @@ export default function ApplicationForm() {
   };
 const getCsrfToken = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:8000/sanctum/csrf-cookie', {
+    const response = await fetch('https://test.brannovate.com/sanctum/csrf-cookie', {
       credentials: 'include',
     });
     const cookies = document.cookie.split(';');
@@ -98,7 +98,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       formDataToSend.append("resume", formData.resume);
     }
 
-    const response = await fetch("http://127.0.0.1:8000/api/send-application", {
+    const response = await fetch("https://test.brannovate.com/api/send-application", {
       method: "POST",
       body: formDataToSend,
       headers: {
