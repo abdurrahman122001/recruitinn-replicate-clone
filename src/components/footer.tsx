@@ -15,13 +15,13 @@ export default function Footer() {
               Innovative HR solutions to engage, develop, and retain talent worldwide.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary">
+              {/* <a href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
+              </a> */}
+              <a href="https://www.linkedin.com/company/zillions-connect/" className="text-muted-foreground hover:text-primary">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
